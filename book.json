@@ -18,9 +18,14 @@
         "hints",
         "copyright",
         "-sharing",
-        "sharing-plus"
+        "sharing-plus",
+        "edit-link"
     ],
     "pluginsConfig": {
+        "edit-link": {
+            "base": "https://github.com/inclavare-containers/cncc-sig-white-paper/edit/master",
+            "label": "编辑"
+        },
         "tbfed-pagefooter": {
             "copyright":"Copyright &copy CNCC-sig.cn 2023",
             "modify_label": "该文件修订时间：",
@@ -62,7 +67,7 @@
         }     
     },
     "structure": {
-        "readme": "java_enclave.md"
+        "readme": "overview.md"
     },
     "generator": "site"
 }
