@@ -1,0 +1,8 @@
+{
+    "branch": "master",
+    "public": "./",
+    "commands": [
+      "nvm i 10 && nvm use 10 && npm install gitbook-cli -g && gitbook install ./ && gitbook build",
+      "mv _book/* $BUILD_DEST"
+    ]
+}
