@@ -1,4 +1,4 @@
-# JavaEnclave
+# Apache Teaclave Java TEE SDK
 
 ## 项目位置链接
 
@@ -20,7 +20,7 @@ http://gitlab.alibaba-inc.com/java-tee/JavaEnclave/tree/master
 
 ### 解决方案
 
-JavaEnclave采用Java静态编译技术将机密计算从C/C++生态扩展到Java生态，并继承了SGX SDK所定义的Host-Enclave Partition编程模型，最大限度的降低了系统TCB，给用户提供一个Pure Java的机密计算开发界面和构建工具链。
+Apache Teaclave Java TEE SDK(JavaEnclave)采用Java静态编译技术将机密计算从C/C++生态扩展到Java生态，并继承了SGX SDK所定义的Host-Enclave Partition编程模型，最大限度的降低了系统TCB，给用户提供一个Pure Java的机密计算开发界面和构建工具链。
 
 ### 结果
 
