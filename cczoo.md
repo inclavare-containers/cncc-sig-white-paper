@@ -1,4 +1,4 @@
-# CCZoo
+# Intel Confidential Computing Zoo
 
 ## 项目位置链接
 
