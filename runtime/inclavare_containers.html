@@ -1,0 +1,820 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈 · CNCC-sig</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="CNCC-sig.cn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tags/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="enclave_cc.html" />
+    
+    
+    <link rel="prev" href="occlum.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    机密计算简介与现状
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../confidential_computing.html">
+            
+                <a href="../confidential_computing.html">
+            
+                    
+                    云原生机密计算SIG概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机密计算平台
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cc_platform/hygon_csv.html">
+            
+                <a href="../cc_platform/hygon_csv.html">
+            
+                    
+                    海光CSV：海光安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cc_platform/sgx_and_dcap.html">
+            
+                <a href="../cc_platform/sgx_and_dcap.html">
+            
+                    
+                    Intel SGX: Intel安全防护扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cc_platform/tdx.html">
+            
+                <a href="../cc_platform/tdx.html">
+            
+                    
+                    Intel TDX: Intel安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cc_platform/amd_sev.html">
+            
+                <a href="../cc_platform/amd_sev.html">
+            
+                    
+                    AMD SEV: AMD安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cc_platform/arm_cca.html">
+            
+                <a href="../cc_platform/arm_cca.html">
+            
+                    
+                    ARM CCA: Arm安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    编程框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../framework/sgx_cc.html">
+            
+                <a href="../framework/sgx_cc.html">
+            
+                    
+                    Intel SGX SDK/PSW/DCAP: Intel SGX软件开发套件和平台软件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../framework/intel_HE.html">
+            
+                <a href="../framework/intel_HE.html">
+            
+                    
+                    Intel Homomorphic Encryption: Intel平台同态加密加速框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../framework/he_development_guide.html">
+            
+                <a href="../framework/he_development_guide.html">
+            
+                    
+                    Intel_HE_Toolkit开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../framework/java_enclave.html">
+            
+                <a href="../framework/java_enclave.html">
+            
+                    
+                    Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../framework/java_enclave_development_guide.html">
+            
+                <a href="../framework/java_enclave_development_guide.html">
+            
+                    
+                    Apache_Teaclave_Java_TEE_SDK最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../framework/rats_tls.html">
+            
+                <a href="../framework/rats_tls.html">
+            
+                    
+                    RATS-TLS: 跨机密计算平台的双向传输层安全协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    运行时底座
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="csv_cc.html">
+            
+                <a href="csv_cc.html">
+            
+                    
+                    海光CSV机密容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="csv_runtime_attestation.html">
+            
+                <a href="csv_runtime_attestation.html">
+            
+                    
+                    基于runtime-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="csv_pre_attestation.html">
+            
+                <a href="csv_pre_attestation.html">
+            
+                    
+                    基于pre-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="csv_sign.html">
+            
+                <a href="csv_sign.html">
+            
+                    
+                    基于runtime-attestation使用签名容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="vcsv.html">
+            
+                <a href="vcsv.html">
+            
+                    
+                    海光CSV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tdx.html">
+            
+                <a href="tdx.html">
+            
+                    
+                    Intel TDX机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="vsgx.html">
+            
+                <a href="vsgx.html">
+            
+                    
+                    Intel vSGX：Intel SGX虚拟化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="run_vsgx.html">
+            
+                <a href="run_vsgx.html">
+            
+                    
+                    Intel SGX虚拟机最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="sev_cc.html">
+            
+                <a href="sev_cc.html">
+            
+                    
+                    AMD SEV机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="vsev.html">
+            
+                <a href="vsev.html">
+            
+                    
+                    AMD SEV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="occlum.html">
+            
+                <a href="occlum.html">
+            
+                    
+                    Occlum: 基于Intel SGX的轻量级LibOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.8" data-path="inclavare_containers.html">
+            
+                <a href="inclavare_containers.html">
+            
+                    
+                    Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="enclave_cc.html">
+            
+                <a href="enclave_cc.html">
+            
+                    
+                    Enclave-CC: 进程级机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../solution/cczoo.html">
+            
+                <a href="../solution/cczoo.html">
+            
+                    
+                    Intel Confidential Computing Zoo: Intel机密计算开源解决方案
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../solution/online_reasoning_service.html">
+            
+                <a href="../solution/online_reasoning_service.html">
+            
+                    
+                    部署TensorFlow Serving在线推理服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../solution/horizontal_federated_learning.html">
+            
+                <a href="../solution/horizontal_federated_learning.html">
+            
+                    
+                    部署TensorFlow横向联邦学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../solution/privacy_set_intersection.html">
+            
+                <a href="../solution/privacy_set_intersection.html">
+            
+                    
+                    部署隐私集合求交方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../solution/ppml.html">
+            
+                <a href="../solution/ppml.html">
+            
+                    
+                    PPML: 端到端隐私保护机器学习解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="inclavare-containers-&#x9762;&#x5411;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x573A;&#x666F;&#x7684;&#x5F00;&#x6E90;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x6280;&#x672F;&#x6808;">Inclavare Containers: &#x9762;&#x5411;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x573A;&#x666F;&#x7684;&#x5F00;&#x6E90;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x6280;&#x672F;&#x6808;</h1>
+<h2 id="&#x9879;&#x76EE;&#x4F4D;&#x7F6E;&#x94FE;&#x63A5;">&#x9879;&#x76EE;&#x4F4D;&#x7F6E;&#x94FE;&#x63A5;</h2>
+<p><a href="https://github.com/inclavare-containers" target="_blank">https://github.com/inclavare-containers</a></p>
+<h2 id="&#x5F52;&#x5C5E;&#x793E;&#x533A;sig">&#x5F52;&#x5C5E;&#x793E;&#x533A;SIG</h2>
+<p>&#x4E91;&#x539F;&#x751F;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;SIG</p>
+<h2 id="&#x6280;&#x672F;&#x81EA;&#x8EAB;&#x4ECB;&#x7ECD;">&#x6280;&#x672F;&#x81EA;&#x8EAB;&#x4ECB;&#x7ECD;</h2>
+<h3 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h3>
+<p>&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x8F6F;&#x4EF6;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x548C;&#x786C;&#x4EF6;HW-TEE&#x4FDD;&#x62A4;&#x7528;&#x6237;&#x6570;&#x636E;&#x548C;&#x7A0B;&#x5E8F;&#x7684;&#x6280;&#x672F;&#x3002; &#x5728;&#x4E91;&#x539F;&#x751F;&#x573A;&#x666F;&#x4E2D;&#xFF0C; &#x673A;&#x5BC6;&#x7EA7;&#x7B97;&#x80FD;&#x591F;&#x5BF9;&#x8BA1;&#x7B97;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x63D0;&#x4F9B;&#x673A;&#x5BC6;&#x6027;&#x548C;&#x5B8C;&#x6574;&#x6027;&#x4FDD;&#x62A4;&#xFF0C; &#x5E76;&#x80FD;&#x591F;&#x6709;&#x6548;&#x9632;&#x6B62;&#x4E91;&#x63D0;&#x4F9B;&#x5546;&#x548C;&#x4EFB;&#x4F55;&#x9AD8;&#x6743;&#x9650;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5BF9;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7A83;&#x53D6;&#x548C;&#x7BE1;&#x6539;&#x3002;</p>
+<h3 id="&#x95EE;&#x9898;&#x6311;&#x6218;">&#x95EE;&#x9898;&amp;&#x6311;&#x6218;</h3>
+<p>&#x5BF9;&#x4E8E;&#x6570;&#x636E;&#x9690;&#x79C1;&#x548C;&#x6570;&#x636E;&#x5B89;&#x5168;&#x5EA6;&#x5173;&#x6CE8;&#x9AD8;&#x7684;&#x7528;&#x6237;&#xFF0C; &#x4E0D;&#x613F;&#x610F;&#x5192;&#x98CE;&#x9669;&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x90E8;&#x7F72;&#x5728;&#x5171;&#x6709;&#x4E91;&#x4E0A;&#xFF0C; &#x56E0;&#x4E3A;&#x4E91;&#x63D0;&#x4F9B;&#x5546;&#x5177;&#x6709;&#x67E5;&#x770B;&#x7528;&#x6237;&#x9690;&#x79C1;&#x6570;&#x636E;&#x548C;&#x4E1A;&#x52A1;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C; &#x8FD9;&#x4E5F;&#x963B;&#x6B62;&#x4E86;&#x4E00;&#x4E9B;&#x4F01;&#x4E1A;&#x4E0A;&#x4E91;&#x7684;&#x811A;&#x6B65;&#x3002;&#x968F;&#x7740;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x84EC;&#x52C3;&#x53D1;&#x5C55;&#xFF0C;&#x786C;&#x4EF6;&#x5382;&#x5546;&#x63D0;&#x4F9B;&#x4E86;HW-TEE&#x786C;&#x4EF6;&#x52A0;&#x5BC6;&#x7684;&#x65B9;&#x6848;&#x7684;&#x6D8C;&#x73B0;&#xFF0C; &#x53EF;&#x4EE5;&#x6709;&#x6548;&#x89E3;&#x51B3;&#x5B89;&#x5168;&#x654F;&#x611F;&#x5EA6;&#x8F83;&#x9AD8;&#x7684;&#x7528;&#x6237;&#x4E0A;&#x4E91;&#x987E;&#x8651;&#x3002; &#x5BF9;&#x4E8E;&#x516C;&#x6709;&#x4E91;&#x4EBA;&#x4EEC;&#x5F00;&#x53D1;&#x548C;&#x90E8;&#x7F72;&#x5F88;&#x591A;&#x662F;&#x4EE5;&#x5BB9;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#xFF0C; &#x5982;&#x4F55;&#x8BA9;HW-TEE&#x548C;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x76F8;&#x7ED3;&#x5408;&#xFF0C;&#x6210;&#x4E3A;&#x4E91;&#x5382;&#x5546;&#x8FEB;&#x5207;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<p>Alibaba&#x548C;Intel&#x628A;Intel-SGX&#x548C;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x76F8;&#x7ED3;&#x5408;&#xFF0C; &#x521B;&#x65B0;&#x6027;&#x7684;&#x5F00;&#x53D1;&#x51FA;&#x4E86;&#x673A;&#x5BC6;&#x5BB9;&#x5668;Inclavare containers, &#x5B8C;&#x7F8E;&#x517C;&#x5BB9;&#x5BB9;&#x5668;&#x6807;&#x51C6;&#xFF0C;&#x5E76;&#x80FD;&#x591F;&#x4E3A;&#x5BA2;&#x6237;&#x7684;&#x6570;&#x636E;&#x548C;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x4FDD;&#x9A7E;&#x62A4;&#x822A;&#xFF0C; &#x5E76;&#x4E14;Inclavare containers &#x5BB9;&#x5668;&#x6210;&#x4E3A;CNCF&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x3002;</p>
+<p><img src="../materials/imgs/inclavare_overview.png" alt="image.png"></p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;Inclavare Containers &#x4E2D;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x57FA;&#x4E8E;&#x786C;&#x4EF6;&#x652F;&#x6301;&#x7684; Enclave &#x6280;&#x672F;&#x4F7F;&#x53EF;&#x4FE1;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x3002;&#x5305;&#x542B;&#x7684;&#x7EC4;&#x4EF6;&#x6709; rune&#x3001;shim-rune&#x3001;Enclave Runtime&#x7B49;&#x3002;</p>
+<ul>
+<li>rune&#xFF1A;rune &#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x7528;&#x4E8E;&#x6839;&#x636E; OCI &#x89C4;&#x8303;&#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x751F;&#x6210;&#x548C;&#x8FD0;&#x884C; Enclave&#x3002;rune &#x662F;&#x5728; runc &#x4EE3;&#x7801;&#x57FA;&#x7840;&#x4E0A;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x666E;&#x901A; runc &#x5BB9;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD0;&#x884C; Enclave &#x5BB9;&#x5668;&#xFF1B;rune&#x5DF2;&#x7ECF;&#x5199;&#x5165; OCI &#x8FD0;&#x884C;&#x65F6;&#x5B9E;&#x73B0;&#x5217;&#x8868;&#xFF1A;
+<a href="https://github.com/opencontainers/runtimespec/blob/master/implementations.md&#x3002;" target="_blank">https://github.com/opencontainers/runtimespec/blob/master/implementations.md&#x3002;</a></li>
+<li>shim-rune&#xFF1A;&#x4E3A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6; rune &#x63D0;&#x4F9B;&#x7684; shim&#xFF0C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3001;&#x628A;&#x666E;&#x901A;&#x955C;&#x50CF;&#x8F6C;&#x6362;&#x6210; TEE &#x955C;&#x50CF;&#xFF1B;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4E0E; rune &#x914D;&#x5408;&#x5B8C;&#x6210;&#x5BB9;&#x5668;&#x7684;&#x521B;&#x5EFA;&#x3001;&#x542F;&#x52A8;&#x3001;&#x505C;&#x6B62;&#x3001;&#x5220;&#x9664;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>Enclave Runtime&#xFF1A;&#x8D1F;&#x8D23;&#x5728; Enclave &#x5185;&#x52A0;&#x8F7D;&#x548C;&#x8FD0;&#x884C;&#x53D7;&#x4FE1;&#x4EFB;&#x548C;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;rune &#x548C; Enclave Runtime &#x4E4B;&#x95F4;&#x7684;&#x63A5;&#x53E3;&#x662F; Enclave Runtime PAL API&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x826F;&#x597D;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x53E3;&#x6765;&#x8C03;&#x7528; Enclave Runtime&#x3002;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5E94;&#x7528;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x4E0E;&#x4E91;&#x539F;&#x751F;&#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</li>
+</ul>
+<p>&#x4E00;&#x7C7B;&#x5178;&#x578B;&#x7684; Enclave Runtime &#x5B9E;&#x73B0;&#x57FA;&#x4E8E;&#x5E93;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x63A8;&#x8350;&#x7684;&#x4E0E; rune &#x4EA4;&#x4E92;&#x7684; Enclave Runtime &#x662F; Occlum&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5185;&#x5B58;&#x5B89;&#x5168;&#x3001;&#x591A;&#x8FDB;&#x7A0B; Libos&#x3002;&#x53E6;&#x4E00;&#x7C7B;&#x5178;&#x578B;&#x7684; Enclave Runtime&#x662F;&#x5E26;&#x6709; Intel&#xAE; SGX WebAssembly Micro Runtime (WAMR)&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x5F88;&#x5C0F;&#x7684;&#x72EC;&#x7ACB; WebAssembly (WASM) &#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5305;&#x62EC;&#x4E00;&#x4E2A; VM &#x6838;&#x5FC3;&#x3001;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x548C;&#x4E00;&#x4E2A; WASM &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x52A8;&#x6001;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x60A8;&#x559C;&#x6B22;&#x7684;&#x4EFB;&#x4F55;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x548C; SDK&#xFF08;&#x4F8B;&#x5982;&#x82F1;&#x7279;&#x5C14; SGX SDK&#xFF09;&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;Enclave Runtime&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x5B9E;&#x73B0;&#x4E86; Enclave Runtime PAL API&#x3002;</p>
+<p>Inclavare Contianers&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p>
+<p>1&#x3001;&#x5C06; Intel&#xAE; SGX &#x6280;&#x672F;&#x4E0E;&#x6210;&#x719F;&#x7684;&#x5BB9;&#x5668;&#x751F;&#x6001;&#x7ED3;&#x5408;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x7684;&#x654F;&#x611F;&#x5E94;&#x7528;&#x4EE5; Enclave &#x5BB9;&#x5668;&#x7684;&#x5F62;&#x5F0F;&#x90E8;&#x7F72;&#x548C;&#x8FD0;&#x884C;&#xFF1B;Inclavare Contianers &#x7684;&#x76EE;&#x6807;&#x662F;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x65E0;&#x7F1D;&#x8FD0;&#x884C;&#x7528;&#x6237;&#x5236;&#x4F5C;&#x7684;&#x666E;&#x901A;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#xFF0C;&#x8FD9;&#x5C06;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5728;&#x5236;&#x4F5C;&#x955C;&#x50CF;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x65E0;&#x9700;&#x4E86;&#x89E3;&#x673A;&#x5BC6;&#x6280;&#x672F;&#x6240;&#x5E26;&#x6765;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x4E0E;&#x666E;&#x901A;&#x5BB9;&#x5668;&#x76F8;&#x540C;&#x7684;&#x4F7F;&#x7528;&#x4F53;&#x611F;&#x3002;</p>
+<p>2&#x3001;Intel&#xAE; SGX &#x6280;&#x672F;&#x63D0;&#x4F9B;&#x7684;&#x4FDD;&#x62A4;&#x7C92;&#x5EA6;&#x662F;&#x5E94;&#x7528;&#x800C;&#x4E0D;&#x662F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x63D0;&#x4F9B;&#x5F88;&#x9AD8;&#x7684;&#x5B89;&#x5168;&#x9632;&#x62A4;&#x624B;&#x6BB5;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4E5F;&#x5E26;&#x6765;&#x4E86;&#x4E00;&#x4E9B;&#x7F16;&#x7A0B;&#x7EA6;&#x675F;&#xFF0C;&#x6BD4;&#x5982;&#x5728; SGX enclave &#x4E2D;&#x65E0;&#x6CD5;&#x6267;&#x884C; syscall &#x6307;&#x4EE4;&#xFF1B;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5F15;&#x5165;&#x4E86; LibOS &#x6280;&#x672F;&#xFF0C;&#x7528;&#x4E8E;&#x6539;&#x5584;&#x4E0A;&#x8FF0;&#x7684;&#x8F6F;&#x4EF6;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x907F;&#x514D;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x5411; Intel&#xAE; SGX Enclave &#x79FB;&#x690D;&#x8F6F;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x53BB;&#x505A;&#x590D;&#x6742;&#x7684;&#x8F6F;&#x4EF6;&#x9002;&#x914D;&#x5DE5;&#x4F5C;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x867D;&#x7136;&#x5404;&#x4E2A; LibOS &#x90FD;&#x5728;&#x52AA;&#x529B;&#x63D0;&#x5347;&#x5BF9;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x7684;&#x652F;&#x6301;&#x6570;&#x91CF;&#xFF0C;&#x4F46;&#x8FD9;&#x7EC8;&#x7A76;&#x96BE;&#x4EE5;&#x4F01;&#x53CA;&#x539F;&#x751F; Linux &#x7CFB;&#x7EDF;&#x7684;&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x5373;&#x4F7F;&#x771F;&#x7684;&#x8FBE;&#x6210;&#x4E86;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;&#x653B;&#x51FB;&#x9762;&#x8FC7;&#x5927;&#x7684;&#x7F3A;&#x70B9;&#x53C8;&#x4F1A;&#x66B4;&#x9732;&#x51FA;&#x6765;&#x3002;&#x56E0;&#x6B64;&#xFF0C;Inclavare Containers &#x901A;&#x8FC7;&#x652F;&#x6301; Java &#x7B49;&#x8BED;&#x8A00;Runtime &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x8865;&#x5168;&#x548C;&#x63D0;&#x5347; Enclave &#x5BB9;&#x5668;&#x7684;&#x6CDB;&#x7528;&#x6027;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C06; Enclave &#x5BB9;&#x5668;&#x7684;&#x6CDB;&#x7528;&#x6027;&#x7ED1;&#x5B9A;&#x5728;&#x201C;&#x63D0;&#x5347;&#x5BF9;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x7684;&#x652F;&#x6301;&#x6570;&#x91CF;&#x201D; &#x8FD9;&#x4E00;&#x5355;&#x4E00;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x7EF4;&#x5EA6;&#x4E0A;&#xFF1B;&#x6B64;&#x5916;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x8BED;&#x8A00; Runtime &#x7684;&#x652F;&#x6301;&#xFF0C;&#x4E5F;&#x80FD;&#x5C06;&#x50CF; Java &#x8FD9;&#x6837;&#x7E41;&#x8363;&#x7684;&#x8BED;&#x8A00;&#x751F;&#x6001;&#x5F15;&#x5165;&#x5230;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x7684;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x4EE5;&#x4E30;&#x5BCC;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5E94;&#x7528;&#x7684;&#x79CD;&#x7C7B;&#x548C;&#x6570;&#x91CF;&#x3002;</p>
+<p>3&#x3001;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x901A;&#x7528;&#x7684; Enclave Runtime PAL API &#x6765;&#x63A5;&#x5165;&#x66F4;&#x591A;&#x7C7B;&#x578B;&#x7684; Enclave Runtime&#xFF0C;&#x6BD4;&#x5982; LibOS &#x5C31;&#x662F;&#x4E00;&#x79CD; Enclave Runtime &#x5F62;&#x6001;&#xFF1B;&#x8BBE;&#x8BA1;&#x8FD9;&#x5C42; API &#x7684;&#x76EE;&#x6807;&#x662F;&#x4E3A;&#x4E86;&#x7E41;&#x8363; Enclave Runtime &#x751F;&#x6001;&#xFF0C;&#x5141;&#x8BB8;&#x66F4;&#x591A;&#x7684; Enclave Runtime &#x901A;&#x8FC7;&#x5BF9;&#x63A5; Inclavare Containers &#x4E0A;&#x5230;&#x4E91;&#x539F;&#x751F;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x540C;&#x65F6;&#x7ED9;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x7684;&#x6280;&#x672F;&#x9009;&#x62E9;&#x3002;</p>
+<h2 id="&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5E94;&#x7528;&#x573A;&#x666F;</h2>
+<p>&#x4F5C;&#x4E3A;&#x4E1A;&#x754C;&#x9996;&#x4E2A;&#x9762;&#x5411;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x573A;&#x666F;&#x7684;&#x5F00;&#x6E90;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;Inclavare Containers &#x4E3A;ACK-TEE&#xFF08;ACK-Trusted Execution Environment&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x4F7F;&#x7528;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x7684;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x3002;ACK-TEE &#x4F9D;&#x6258; Inclavare Containers&#xFF0C;&#x80FD;&#x591F;&#x65E0;&#x7F1D;&#x5730;&#x8FD0;&#x884C;&#x7528;&#x6237;&#x5236;&#x4F5C;&#x7684;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x4E0E;&#x666E;&#x901A;&#x5BB9;&#x5668;&#x76F8;&#x540C;&#x7684;&#x4F7F;&#x7528;&#x4F53;&#x611F;&#x3002;ACK-TEE &#x53EF;&#x88AB;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x9690;&#x79C1;&#x8BA1;&#x7B97;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;&#x533A;&#x5757;&#x94FE;&#x3001;&#x5B89;&#x5168;&#x591A;&#x65B9;&#x8BA1;&#x7B97;&#x3001;&#x5BC6;&#x94A5;&#x7BA1;&#x7406;&#x3001;&#x57FA;&#x56E0;&#x8BA1;&#x7B97;&#x3001;&#x91D1;&#x878D;&#x5B89;&#x5168;&#x3001;AI&#x3001;&#x6570;&#x636E;&#x79DF;&#x8D41;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2023-03-08 16:03:24
+</span></footer>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="occlum.html" class="navigation navigation-prev " aria-label="Previous page: Occlum: 基于Intel SGX的轻量级LibOS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="enclave_cc.html" class="navigation navigation-next " aria-label="Next page: Enclave-CC: 进程级机密容器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈","level":"1.5.8","depth":2,"next":{"title":"Enclave-CC: 进程级机密容器","level":"1.5.9","depth":2,"path":"runtime/enclave_cc.md","ref":"./runtime/enclave_cc.md","articles":[]},"previous":{"title":"Occlum: 基于Intel SGX的轻量级LibOS","level":"1.5.7","depth":2,"path":"runtime/occlum.md","ref":"./runtime/occlum.md","articles":[]},"dir":"ltr"},"config":{"plugins":["alerts","tbfed-pagefooter","sectionx","expandable-chapters","chapter-fold","emphasize","chapter-fold","hide-element","tags","text-highlight","hints","-sharing","sharing-plus","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{},"chapter-fold":{},"emphasize":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"text-highlight":{},"highlight":{},"alerts":{},"tags":{"placement":"top"},"sharing":{"qq":false,"all":["weibo"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"edit-link":{"label":"编辑","base":"https://github.com/houhuiting/cncc-sig-white-paper/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"CNCC-sig.cn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CNCC-sig","language":"zh-hans","gitbook":">= 3.2.2","description":"CNCC-sig"},"file":{"path":"runtime/inclavare_containers.md","mtime":"2023-03-08T08:03:24.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-17T12:57:24.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

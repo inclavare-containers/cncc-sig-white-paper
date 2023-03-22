@@ -1,0 +1,1000 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基于runtime-attestation使用签名容器 · CNCC-sig</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="CNCC-sig.cn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tags/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vcsv.html" />
+    
+    
+    <link rel="prev" href="csv_pre_attestation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    机密计算简介与现状
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../confidential_computing.html">
+            
+                <a href="../confidential_computing.html">
+            
+                    
+                    云原生机密计算SIG概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机密计算平台
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cc_platform/hygon_csv.html">
+            
+                <a href="../cc_platform/hygon_csv.html">
+            
+                    
+                    海光CSV：海光安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cc_platform/sgx_and_dcap.html">
+            
+                <a href="../cc_platform/sgx_and_dcap.html">
+            
+                    
+                    Intel SGX: Intel安全防护扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cc_platform/tdx.html">
+            
+                <a href="../cc_platform/tdx.html">
+            
+                    
+                    Intel TDX: Intel安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cc_platform/amd_sev.html">
+            
+                <a href="../cc_platform/amd_sev.html">
+            
+                    
+                    AMD SEV: AMD安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cc_platform/arm_cca.html">
+            
+                <a href="../cc_platform/arm_cca.html">
+            
+                    
+                    ARM CCA: Arm安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    编程框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../framework/sgx_cc.html">
+            
+                <a href="../framework/sgx_cc.html">
+            
+                    
+                    Intel SGX SDK/PSW/DCAP: Intel SGX软件开发套件和平台软件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../framework/intel_HE.html">
+            
+                <a href="../framework/intel_HE.html">
+            
+                    
+                    Intel Homomorphic Encryption: Intel平台同态加密加速框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../framework/he_development_guide.html">
+            
+                <a href="../framework/he_development_guide.html">
+            
+                    
+                    Intel_HE_Toolkit开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../framework/java_enclave.html">
+            
+                <a href="../framework/java_enclave.html">
+            
+                    
+                    Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../framework/java_enclave_development_guide.html">
+            
+                <a href="../framework/java_enclave_development_guide.html">
+            
+                    
+                    Apache_Teaclave_Java_TEE_SDK最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../framework/rats_tls.html">
+            
+                <a href="../framework/rats_tls.html">
+            
+                    
+                    RATS-TLS: 跨机密计算平台的双向传输层安全协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    运行时底座
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="csv_cc.html">
+            
+                <a href="csv_cc.html">
+            
+                    
+                    海光CSV机密容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="csv_runtime_attestation.html">
+            
+                <a href="csv_runtime_attestation.html">
+            
+                    
+                    基于runtime-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="csv_pre_attestation.html">
+            
+                <a href="csv_pre_attestation.html">
+            
+                    
+                    基于pre-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.1.3" data-path="csv_sign.html">
+            
+                <a href="csv_sign.html">
+            
+                    
+                    基于runtime-attestation使用签名容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="vcsv.html">
+            
+                <a href="vcsv.html">
+            
+                    
+                    海光CSV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tdx.html">
+            
+                <a href="tdx.html">
+            
+                    
+                    Intel TDX机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="vsgx.html">
+            
+                <a href="vsgx.html">
+            
+                    
+                    Intel vSGX：Intel SGX虚拟化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="run_vsgx.html">
+            
+                <a href="run_vsgx.html">
+            
+                    
+                    Intel SGX虚拟机最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="sev_cc.html">
+            
+                <a href="sev_cc.html">
+            
+                    
+                    AMD SEV机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="vsev.html">
+            
+                <a href="vsev.html">
+            
+                    
+                    AMD SEV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="occlum.html">
+            
+                <a href="occlum.html">
+            
+                    
+                    Occlum: 基于Intel SGX的轻量级LibOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="inclavare_containers.html">
+            
+                <a href="inclavare_containers.html">
+            
+                    
+                    Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="enclave_cc.html">
+            
+                <a href="enclave_cc.html">
+            
+                    
+                    Enclave-CC: 进程级机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../solution/cczoo.html">
+            
+                <a href="../solution/cczoo.html">
+            
+                    
+                    Intel Confidential Computing Zoo: Intel机密计算开源解决方案
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../solution/online_reasoning_service.html">
+            
+                <a href="../solution/online_reasoning_service.html">
+            
+                    
+                    部署TensorFlow Serving在线推理服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../solution/horizontal_federated_learning.html">
+            
+                <a href="../solution/horizontal_federated_learning.html">
+            
+                    
+                    部署TensorFlow横向联邦学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../solution/privacy_set_intersection.html">
+            
+                <a href="../solution/privacy_set_intersection.html">
+            
+                    
+                    部署隐私集合求交方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../solution/ppml.html">
+            
+                <a href="../solution/ppml.html">
+            
+                    
+                    PPML: 端到端隐私保护机器学习解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >基于runtime-attestation使用签名容器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x7B7E;&#x540D;&#x5BB9;&#x5668;">&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x7B7E;&#x540D;&#x5BB9;&#x5668;</h1>
+<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x4E3A;&#x60A8;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;kata&#x73AF;&#x5883;&#x4E2D;&#x57FA;&#x4E8E;&#x6D77;&#x5149;&#x5B89;&#x5168;&#x52A0;&#x5BC6;&#x865A;&#x62DF;&#x5316;&#x529F;&#x80FD;CSV(China Secure Virtualization)&#x6280;&#x672F;&#xFF0C;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x79DF;&#x6237;&#x7684;&#x7B7E;&#x540D;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#x3002;</p>
+<h2 id="&#x524D;&#x63D0;&#x6761;&#x4EF6;">&#x524D;&#x63D0;&#x6761;&#x4EF6;</h2>
+<p>&#x8BF7;&#x53C2;&#x8003;&#x300A;&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x300B;&#x6307;&#x5357;&#x7684;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x4E00;&#x8282;&#xFF0C;&#x5B8C;&#x6210;&#x5BF9;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x7684;&#x68C0;&#x67E5;&#x548C;&#x914D;&#x7F6E;&#x3002;</p>
+<h2 id="&#x80CC;&#x666F;&#x4FE1;&#x606F;">&#x80CC;&#x666F;&#x4FE1;&#x606F;</h2>
+<p><img src="../materials/imgs/csv_sign.png" alt=""></p>
+<p>&#x76F8;&#x8F83;&#x4E8E;Confidential Container v0&#xFF0C;Confidential Container v1&#x589E;&#x52A0;&#x652F;&#x6301;&#x955C;&#x50CF;&#x7B7E;&#x540D;&#x548C;&#x9A8C;&#x7B7E;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;image-rs&#x53D6;&#x4EE3;umoci&#x548C;skopeo&#x6765;&#x5B8C;&#x6210;&#x955C;&#x50CF;&#x7684;&#x76F8;&#x5173;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#x3002;&#x66F4;&#x591A;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="https://github.com/confidential-containers/image-rs/blob/main/docs/ccv1_image_security_design.md" target="_blank">ccv1_image_security_design</a> &#x3002;</p>
+<p>&#x2460;&#x2461;&#x2462;&#xFF1A;containerd &#x8C03;&#x7528; kata-runtime &#x542F;&#x52A8; CSV VM&#xFF1B;kata-runtime&#x8C03;&#x7528; image-rs &#x4E0B;&#x8F7D;&#x52A0;&#x5BC6;&#x955C;&#x50CF;&#xFF1B;</p>
+<p>&#x2463;&#xFF1A;attestation-agent &#x901A;&#x8FC7; vm-attestation hypercall &#x83B7;&#x53D6;&#x5305;&#x62EC; attestation-report &#x3001;chip-id &#x7B49;&#x5185;&#x5BB9;&#x7684; CSV VM evidence&#xFF1B;</p>
+<p>&#x2464;&#xFF1A;attestation-agent &#x53D1;&#x9001; CSV VM evidence &#x7ED9; verdictd server&#xFF1B;verdictd &#x9A8C;&#x8BC1; CSV VM evidence &#x7684;&#x8BC1;&#x4E66;&#x94FE;&#x3001;&#x7B7E;&#x540D;&#x3001;digest &#x7B49;&#x5185;&#x5BB9;&#xFF1B;&#x4E0E; attestation-agent &#x5EFA;&#x7ACB;&#x57FA;&#x4E8E; rats-tls &#x7684;&#x53EF;&#x4FE1;&#x786C;&#x4EF6;&#x73AF;&#x5883;&#x7684;&#x5B89;&#x5168;&#x901A;&#x9053;&#xFF1B; </p>
+<p>&#x2465;&#x2466;&#xFF1A;attestation-agent &#x5411;verdictd server &#x8BF7;&#x6C42;&#x9A8C;&#x7B7E; key&#x548C;image policy&#xFF0C;verdictd &#x4F5C;&#x4E3A; KBS &#x901A;&#x8FC7;&#x5B89;&#x5168;&#x901A;&#x9053;&#x53D1;&#x9001; policy &#x6587;&#x4EF6;&#x548C;&#x9A8C;&#x7B7E;key&#x53D1;&#x9001;&#x7ED9; attestation-agent&#xFF1B;</p>
+<p>&#x2467;&#xFF1A;image-rs &#x4F7F;&#x7528; key &#x9A8C;&#x7B7E;&#x955C;&#x50CF;&#xFF1B;</p>
+<p>&#x2468;&#xFF1A;&#x542F;&#x52A8;&#x955C;&#x50CF;&#x8FD0;&#x884C; workload</p>
+<h2 id="&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x914D;&#x7F6E;&#x6743;&#x9650;">&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x914D;&#x7F6E;&#x6743;&#x9650;</h2>
+<p>&#x8BF7;&#x53C2;&#x8003;&#x300A;&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x300B;&#x6307;&#x5357;&#x7684;&#x6B65;&#x9AA4;&#x4E00;&#xFF0C;&#x5B8C;&#x6210;&#x914D;&#x7F6E;&#x6743;&#x9650;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x5236;&#x4F5C;&#x7B7E;&#x540D;&#x7684;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#x955C;&#x50CF;">&#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x5236;&#x4F5C;&#x7B7E;&#x540D;&#x7684;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#x955C;&#x50CF;</h2>
+<h3 id="1-&#x2F63;&#x6210;gpg&#x5BC6;&#x94A5;&#x5BF9;">1. &#x2F63;&#x6210;GPG&#x5BC6;&#x94A5;&#x5BF9;</h3>
+<p>GPG&#xFF1A;GNU Privacy Guard &#xFF0C; &#x7528;&#x4E8E;&#x52A0;&#x5BC6;&#x3001;&#x7B7E;&#x540D;&#x901A;&#x4FE1;&#x5185;&#x5BB9;&#x53CA;&#x7BA1;&#x7406;&#x975E;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#x7B49;&#x3002;
+&#x8FD9;&#x91CC;&#x5047;&#x8BBE;&#x7528;&#x6237;&#x540D;&#x4E3A; testing&#xFF0C;&#x90AE;&#x7BB1;&#x4E3A;test@higon.cn&#xFF0C;&#x8BF7;&#x6309;gpg2&#x63D0;&#x793A;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x3001;&#x90AE;&#x7BB1;&#x3001;&#x5BC6;&#x7801;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code>gpg2 --gen-key
+</code></pre><p>&#x4E0A;&#x8FF0;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6267;&#x884C; gpg2 --list-keys &#x5217;&#x4E3E;&#x751F;&#x6210;&#x7684;&#x5BC6;&#x94A5;&#xFF1A;
+&#x53EF;&#x770B;&#x89C1;&#x7C7B;&#x4F3C;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>[root@localhost test]# gpg2 --list-keys
+/root/.gnupg/pubring.kbx
+------------------------
+pub   rsa2048 2022-05-11 [SC] [expires: 2024-05-10]
+      B0801A210472A10CC22090C8B27A004C4E80D3E5
+uid           [ultimate] testing &lt;test@hygon.cn&gt;
+sub   rsa2048 2022-05-11 [E] [expires: 2024-05-10]
+</code></pre><p>&#x7531;&#x4E8E;verdictd&#x4E0D;&#x652F;&#x6301;kbx&#x683C;&#x5F0F;pubkey&#xFF0C;&#x8FD8;&#x9700;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#x751F;&#x6210;pubring.gpg</p>
+<pre><code>cd /root/.gnupg/
+gpg2 --armor --export --output pubring.gpg test@hygon.cn
+</code></pre><h3 id="2-&#x5236;&#x4F5C;&#x7B7E;&#x540D;&#x7684;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#x955C;&#x50CF;">2. &#x5236;&#x4F5C;&#x7B7E;&#x540D;&#x7684;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#x955C;&#x50CF;</h3>
+<p>&#x4EE5;docker.io/library/busybox:latest&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x4E3A;&#x4F8B;&#xFF0C;&#x5047;&#x8BBE;&#x7528;&#x6237;&#x540D;&#x4E3A;test&#xFF0C;&#x5219;&#x8FDC;&#x7AEF;&#x7684;&#x4E2A;&#x2F08;&#x4ED3;&#x5E93;&#x4E3A;docker.io/test/busybox&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x5E94;&#x5C06;docker.io/test&#x66F4;&#x540D;&#x4E3A;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF0C;docker.io/xxxx&#x3002;</p>
+</blockquote>
+<p>&#x2FB8;&#x5148;&#x914D;&#x7F6E; /etc/containers/registries.d/default.yaml &#x2F42;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;:  </p>
+<pre><code>default-docker:
+ sigstore-staging: file:///var/lib/containers/sigstore
+</code></pre><p>&#x7136;&#x540E;&#x2F64;skopeo copy --sign-by&#x8FDB;&#x2F8F;&#x7B7E;&#x540D;&#xFF0C;
+&#x4EE5;&#x7528;&#x6237;test&#x4E3A;&#x4F8B;&#xFF1A;&#x6267;&#x884C;&#x6210;&#x529F;&#x540E;&#x5728;<a href="https://hub.docker.com/r/bugkeeper/busybox/tags" target="_blank">https://hub.docker.com/r/test/busybox/tags</a> &#x4E0A;&#x53EF;&#x89C2;&#x5BDF;&#x5230;sig-test&#x7684;tag&#x3002;</p>
+<pre><code>skopeo login docker.io --username &lt;$username&gt; --password &lt;$password&gt;
+
+skopeo copy --remove-signatures --sign-by test@hygon.cn \
+ docker://docker.io/library/busybox:latest \
+ docker://docker.io/test/busybox:sig-test
+
+skopeo logout docker.io/test
+</code></pre><p>&#x4EE5;&#x7528;&#x6237;test&#x4E3A;&#x4F8B;&#xFF1A;&#x5728;&#x672C;&#x5730;&#x53EF;&#x89C2;&#x5BDF;&#x5230; /var/lib/containers/sigstore &#x2F6C;&#x5F55;&#x4E0B;&#x591A;&#x51FA;&#x4E86;test&#x2F6C;&#x5F55;&#xFF08;&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x7B7E;&#x540D;&#x7684;&#x51C6;&#x5907;&#x2F2F;&#x4F5C;&#xFF09;&#xFF1A;  </p>
+<pre><code>tree /var/lib/containers/sigstore
+
+/var/lib/containers/sigstore
+&#x2514;&#x2500;&#x2500; test
+    &#x2514;&#x2500;&#x2500; busybox@sha256=52f431d980baa76878329b68ddb69cb124c25efa6e206d8b0bd797a828f0528e
+        &#x2514;&#x2500;&#x2500; signature-1
+</code></pre><h2 id="&#x6B65;&#x9AA4;&#x4E09;&#xFF1A;&#x5B89;&#x88C5;kata-&#x73AF;&#x5883;">&#x6B65;&#x9AA4;&#x4E09;&#xFF1A;&#x5B89;&#x88C5;kata &#x73AF;&#x5883;</h2>
+<p>&#x8BF7;&#x53C2;&#x8003;&#x300A;&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x300B;&#x6307;&#x5357;&#x7684;&#x6B65;&#x9AA4;&#x4E8C;&#x6765;&#x5B89;&#x88C5;kata&#x73AF;&#x5883;&#xFF0C;&#x5E76;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x66F4;&#x65B0;initrd&#x6587;&#x4EF6;&#x548C;kata &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x66F4;&#x65B0;initrd&#x6587;&#x4EF6;">&#x66F4;&#x65B0;initrd&#x6587;&#x4EF6;</h3>
+<h4 id="&#x89E3;&#x538B;initrd-image">&#x89E3;&#x538B;initrd image</h4>
+<pre><code>cp initrd.run.img ./initrd.img.gz
+gunzip initrd.img.gz
+mkdir initrd
+cd initrd/
+cpio -ivmd &lt; ../initrd.img
+</code></pre><h4 id="&#x914D;&#x7F6E;&#x5F85;&#x9A8C;&#x8BC1;&#x955C;&#x50CF;&#x7B7E;&#x540D;&#x2F42;&#x4EF6;">&#x914D;&#x7F6E;&#x5F85;&#x9A8C;&#x8BC1;&#x955C;&#x50CF;&#x7B7E;&#x540D;&#x2F42;&#x4EF6;</h4>
+<p>&#x5C06; /var/lib/containers/sigstore &#x2F6C;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9; &#x590D;&#x5236;&#x5230;initrd/var/lib/containers/sigstore&#xFF1A;</p>
+<pre><code>sudo cp -rf /var/lib/containers/sigstore/* initrd/var/lib/containers/sigstore
+</code></pre><h4 id="&#x91CD;&#x65B0;&#x6253;&#x5305;initrd">&#x91CD;&#x65B0;&#x6253;&#x5305;initrd</h4>
+<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> initrd/
+find . | cpio -o -H newc &gt; ../initrd.new.img
+gzip ../initrd.new.img
+<span class="hljs-built_in">cd</span> ../ &amp;&amp; mv initrd.new.img.gz initrd.new.img
+cp initrd.new.img initrd.run.img
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x56DB;&#xFF1A;&#x5B89;&#x88C5;containerd">&#x6B65;&#x9AA4;&#x56DB;&#xFF1A;&#x5B89;&#x88C5;containerd</h2>
+<p>&#x8BF7;&#x53C2;&#x8003;&#x300A;&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x300B;&#x6307;&#x5357;&#x7684;&#x6B65;&#x9AA4;&#x4E09;&#x6765;&#x5B89;&#x88C5;containerd&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;&#x4E94;&#xFF1A;&#x642D;&#x5EFA;kubenetes&#x8FD0;&#x884C;&#x73AF;&#x5883;">&#x6B65;&#x9AA4;&#x4E94;&#xFF1A;&#x642D;&#x5EFA;kubenetes&#x8FD0;&#x884C;&#x73AF;&#x5883;</h2>
+<p>&#x8BF7;&#x53C2;&#x8003;&#x300A;&#x57FA;&#x4E8E;runtime-attestation&#x4F7F;&#x7528;&#x673A;&#x5BC6;&#x5BB9;&#x5668;&#x300B;&#x6307;&#x5357;&#x7684;&#x6B65;&#x9AA4;&#x56DB;&#x6765;&#x642D;&#x5EFA;kubenetes&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;&#x516D;&#xFF1A;-&#x5B89;&#x88C5;&#x5E76;&#x542F;&#x52A8;verdictd">&#x6B65;&#x9AA4;&#x516D;&#xFF1A; &#x5B89;&#x88C5;&#x5E76;&#x542F;&#x52A8;Verdictd</h2>
+<p>Verdictd&#x662F;&#x4E00;&#x79CD;&#x8FDC;&#x7A0B;&#x8BA4;&#x8BC1;&#x5B9E;&#x73B0;&#xFF0C;&#x7531;&#x4E00;&#x7EC4;&#x6784;&#x5EFA;&#x5757;&#x7EC4;&#x6210;&#xFF0C;&#x8FD9;&#x4E9B;&#x6784;&#x5EFA;&#x5757;&#x5229;&#x7528;Intel/AMD&#x7684;&#x5B89;&#x5168;&#x7279;&#x6027;&#x6765;&#x53D1;&#x73B0;&#x3001;&#x9A8C;&#x8BC1;&#x548C;&#x652F;&#x6301;&#x5173;&#x952E;&#x7684;&#x57FA;&#x7840;&#x5B89;&#x5168;&#x548C;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x7528;&#x4F8B;&#x3002;&#x5B83;&#x4F9D;&#x9760;RATS-TLS&#x5E94;&#x7528;&#x8FDC;&#x7A0B;&#x8BA4;&#x8BC1;&#x57FA;&#x7840;&#x548C;&#x6807;&#x51C6;&#x89C4;&#x8303;&#x6765;&#x7EF4;&#x62A4;&#x5E73;&#x53F0;&#x6570;&#x636E;&#x6536;&#x96C6;&#x670D;&#x52A1;&#x548C;&#x9AD8;&#x6548;&#x7684;&#x9A8C;&#x8BC1;&#x5F15;&#x64CE;&#x6765;&#x6267;&#x884C;&#x5168;&#x9762;&#x7684;&#x4FE1;&#x4EFB;&#x8BC4;&#x4F30;&#x3002;&#x8FD9;&#x4E9B;&#x4FE1;&#x4EFB;&#x8BC4;&#x4F30;&#x53EF;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;&#x7ED9;&#x5B9A;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x7684;&#x4E0D;&#x540C;&#x4FE1;&#x4EFB;&#x548C;&#x5B89;&#x5168;&#x7B56;&#x7565;&#x3002; &#x66F4;&#x591A;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x8003;<a href="https://github.com/inclavare-containers/verdictd" target="_blank">verdictd</a>&#x9879;&#x76EE;&#x6587;&#x6863;&#x3002;</p>
+<h3 id="1-&#x5B89;&#x88C5;verdicted">1. &#x5B89;&#x88C5;verdicted</h3>
+<pre><code class="lang-sh">yum remove verdictd -y
+rm -rf /usr/share/rats-tls /usr/<span class="hljs-built_in">local</span>/lib/rats-tls/ /usr/<span class="hljs-built_in">local</span>/bin/verdict*
+yum install -y verdictd
+</code></pre>
+<h3 id="2-&#x914D;&#x7F6E;verdictd">2. &#x914D;&#x7F6E;verdictd</h3>
+<h4 id="21-&#x5C06;&#x6B65;&#x9AA4;&#x4E8C;&#x4E2D;&#x7684;pubringgpg&#x590D;&#x5236;&#x5230;-optverdictdgpg">2.1 &#x5C06;&#x6B65;&#x9AA4;&#x4E8C;&#x4E2D;&#x7684;pubring.gpg&#x590D;&#x5236;&#x5230; /opt/verdictd/gpg/</h4>
+<pre><code>cp /root/.gnupg/pubring.gpg  /opt/verdictd/gpg/keyring.gpg
+</code></pre><h4 id="22-&#x5C06;policyjson&#x5199;&#x5165;&#x5230;-optverdictdimage">2.2 &#x5C06;policy.json&#x5199;&#x5165;&#x5230; /opt/verdictd/image/</h4>
+<blockquote>
+<p>&#x5728;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x5E94;&#x5C06;&#x7528;&#x6237;docker.io/test&#x66F4;&#x540D;&#x4E3A;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x7684;docker.io&#x7528;&#x6237;&#x540D;&#xFF0C;docker.io/xxxx&#x3002;</p>
+</blockquote>
+<pre><code>
+cat&gt;/opt/verdictd/image/policy.json &lt;&lt;EOF
+{
+  &quot;default&quot;: [
+   {
+      &quot;type&quot;: &quot;reject&quot;
+   }
+ ],
+  &quot;transports&quot;: {
+    &quot;docker&quot;: {
+      &quot;docker.io/test&quot;: [
+       {
+          &quot;type&quot;: &quot;signedBy&quot;,
+          &quot;keyType&quot;: &quot;GPGKeys&quot;,
+          &quot;keyPath&quot;: &quot;/run/image-security/simple_signing/pubkey.gpg&quot;
+       }
+     ]
+   }
+ }
+}
+EOF
+</code></pre><h4 id="23-&#x5C06;sigstoreyaml&#x5199;&#x5165;&#x5230;-optverdictdimage">2.3 &#x5C06;sigstore.yaml&#x5199;&#x5165;&#x5230; /opt/verdictd/image/</h4>
+<pre><code>cat&gt;/opt/verdictd/image/sigstore.yaml &lt;&lt;EOF
+default-docker:
+ sigstore: file:///var/lib/containers/sigstore
+
+docker:
+ docker.io/test:
+   sigstore: file:///var/lib/containers/sigstore
+EOF
+</code></pre><h4 id="24-&#x914D;&#x7F6E;csv-opa&#x6587;&#x4EF6;">2.4 &#x914D;&#x7F6E;CSV OPA&#x6587;&#x4EF6;</h4>
+<p>&#x4F7F;&#x7528;/opt/csv/calculate_hash.py&#x8BA1;&#x7B97;measure&#xFF1A;</p>
+<pre><code class="lang-sh">yum install -y gop
+/opt/csv/calculate_hash.py --ovmf  /opt/csv/ccv0-guest/OVMF.fd --kernel /opt/csv/ccv0-guest/vmlinuz-5.15.0-rc5+  --initrd /opt/csv/ccv0-guest/initrd.run.img --cmdline /opt/csv/ccv0-guest/cmdline
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x7C7B;&#x4F3C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-sh">Calculating <span class="hljs-built_in">hash</span> of kernel at /opt/csv/ccv0-guest/vmlinuz-5.15.0-rc5+
+Calculating <span class="hljs-built_in">hash</span> of initrd at /opt/csv/ccv0-guest/initrd.run.img
+Calculating <span class="hljs-built_in">hash</span> of kernel params (/opt/csv/ccv0-guest/cmdline)
+Firmware Digest:  OJXIhq3PHbknNmpAIy8YpUHOpY0wvGRXULOW8djVAZA=
+</code></pre>
+<p>&#x914D;&#x7F6E;csvData&#xFF0C;&#x9700;&#x786E;&#x4FDD;csvData&#x4E2D;&#x7684;measure&#x4E0E;&#x524D;&#x4E00;&#x6B65;&#x8BA1;&#x7B97;&#x7684;Firmware Digest&#x4E00;&#x81F4;&#x3002;</p>
+<pre><code class="lang-sh">mkdir -p /opt/verdictd/opa/ &amp;&amp; cat &lt;&lt;EOF | sudo tee /opt/verdictd/opa/csvData
+{
+    <span class="hljs-string">&quot;measure&quot;</span>: [<span class="hljs-string">&quot;OJXIhq3PHbknNmpAIy8YpUHOpY0wvGRXULOW8djVAZA=&quot;</span>]
+}
+EOF
+</code></pre>
+<p>&#x914D;&#x7F6E;csvPolicy.rego&#xFF1A;</p>
+<pre><code class="lang-sh">cat &lt;&lt;EOF | sudo tee /opt/verdictd/opa/csvPolicy.rego
+
+package policy
+
+<span class="hljs-comment"># By default, deny requests.</span>
+default allow = <span class="hljs-literal">false</span>
+
+allow {
+    measure_is_grant
+}
+
+
+measure_is_grant {
+    count(data.measure) == 0
+}
+
+measure_is_grant {
+    count(data.measure) &gt; 0
+    input.measure == data.measure[_]
+}
+EOF
+</code></pre>
+<h3 id="3-&#x542F;&#x52A8;verdictd">3. &#x542F;&#x52A8;verdictd</h3>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x542F;&#x52A8;verdictd&#xFF0C;&#x4ECE;&#x800C;&#x4E8E;Attestation-Agent&#x5EFA;&#x7ACB;&#x57FA;&#x4E8E;CSV&#x7684;&#x5B89;&#x5168;&#x4FE1;&#x9053;&#x3002;</p>
+<pre><code class="lang-sh">verdictd --listen 0.0.0.0:20002 --verifier csv --attester nullattester --client-api 127.0.0.1:20001 --mutual
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;verdictd &#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E00;&#x4E2A;&#x62A5;&#x9519;&#x3002;&#x539F;&#x56E0;&#x662F;&#x5728;&#x6CE8;&#x518C;SGX&#x76F8;&#x5173;&#x7684; instance&#x65F6;&#x51FA;&#x9519;&#xFF0C;&#x5728;CSV&#x5E73;&#x53F0;&#x4E0A;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x3002;</p>
+<pre><code class="lang-sh">[ERROR] failed on dlopen(): libsgx_dcap_quoteverify.so.1: cannot open shared object file: No such file or directory
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x4E03;&#xFF1A;&#x542F;&#x52A8;&#x5E76;&#x9A8C;&#x8BC1;&#x5E26;&#x7B7E;&#x540D;&#x7684;&#x955C;&#x50CF;">&#x6B65;&#x9AA4;&#x4E03;&#xFF1A;&#x542F;&#x52A8;&#x5E76;&#x9A8C;&#x8BC1;&#x5E26;&#x7B7E;&#x540D;&#x7684;&#x955C;&#x50CF;</h2>
+<h3 id="1-&#x521B;&#x5EFA;runtimeclass&#x5BF9;&#x8C61;kata">1. &#x521B;&#x5EFA;RuntimeClass&#x5BF9;&#x8C61;kata</h3>
+<p>&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;RuntimeClass&#x4E3A;pod&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;kata&#x4F5C;&#x4E3A;&#x9A8C;&#x8BC1;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x3002;
+&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x521B;&#x5EFA;RuntimeClass&#x5BF9;&#x8C61;kata&#x3002;</p>
+<pre><code>cat &lt;&lt;-EOF | kubectl apply -f -
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: kata
+handler: kata
+EOF
+</code></pre><h3 id="2-&#x90E8;&#x7F72;pod">2. &#x90E8;&#x7F72;pod</h3>
+<p>&#x5982;&#x679C; pod &#x7684; runtimeClassName &#x8BBE;&#x7F6E;&#x4E3A; kata&#xFF0C;CRI &#x63D2;&#x4EF6;&#x4F1A;&#x4F7F;&#x7528; Kata Containers &#x8FD0;&#x884C;&#x65F6;&#x8FD0;&#x884C; pod&#x3002; &#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x90E8;&#x7F72;&#x540D;&#x79F0;&#x4E3A;sig-test&#x7684;pod&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x5E94;&#x5C06;&#x7528;&#x6237;docker.io/test&#x66F4;&#x540D;&#x4E3A;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF0C;docker.io/xxxx&#x3002;</p>
+</blockquote>
+<pre><code>cat &lt;&lt;-EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sig-test
+spec:
+  runtimeClassName: kata
+  containers:
+  - image: docker.io/test/busybox:sig-test
+    command:
+      - top
+    imagePullPolicy: IfNotPresent
+    name: csv-sig-test
+  restartPolicy: Never
+EOF
+</code></pre><h3 id="3-&#x6D4B;&#x8BD5;&#x7B7E;&#x540D;&#x955C;&#x50CF;&#x662F;&#x5426;&#x90E8;&#x7F72;&#x6210;&#x529F;">3. &#x6D4B;&#x8BD5;&#x7B7E;&#x540D;&#x955C;&#x50CF;&#x662F;&#x5426;&#x90E8;&#x7F72;&#x6210;&#x529F;</h3>
+<p>&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x770B;&#x52A0;&#x5BC6;&#x955C;&#x50CF;&#x662F;&#x5426;&#x90E8;&#x7F72;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code>kubectl get pods
+</code></pre><p>&#x9884;&#x671F;&#x8F93;&#x51FA;&#x7C7B;&#x4F3C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>NAME       READY   STATUS    RESTARTS   AGE
+sig-test   1/1     Running   0          23s
+</code></pre><footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2023-03-08 17:30:32
+</span></footer>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="csv_pre_attestation.html" class="navigation navigation-prev " aria-label="Previous page: 基于pre-attestation使用机密容器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vcsv.html" class="navigation navigation-next " aria-label="Next page: 海光CSV机密虚拟机">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基于runtime-attestation使用签名容器","level":"1.5.1.3","depth":3,"next":{"title":"海光CSV机密虚拟机","level":"1.5.2","depth":2,"path":"runtime/vcsv.md","ref":"./runtime/vcsv.md","articles":[]},"previous":{"title":"基于pre-attestation使用机密容器","level":"1.5.1.2","depth":3,"path":"runtime/csv_pre_attestation.md","ref":"./runtime/csv_pre_attestation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["alerts","tbfed-pagefooter","sectionx","expandable-chapters","chapter-fold","emphasize","chapter-fold","hide-element","tags","text-highlight","hints","-sharing","sharing-plus","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{},"chapter-fold":{},"emphasize":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"text-highlight":{},"highlight":{},"alerts":{},"tags":{"placement":"top"},"sharing":{"qq":false,"all":["weibo"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"edit-link":{"label":"编辑","base":"https://github.com/houhuiting/cncc-sig-white-paper/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"CNCC-sig.cn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CNCC-sig","language":"zh-hans","gitbook":">= 3.2.2","description":"CNCC-sig"},"file":{"path":"runtime/csv_sign.md","mtime":"2023-03-08T09:30:32.528Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-17T12:57:24.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

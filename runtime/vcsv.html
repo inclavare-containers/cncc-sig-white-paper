@@ -1,0 +1,908 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>海光CSV机密虚拟机 · CNCC-sig</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="CNCC-sig.cn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tags/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tdx.html" />
+    
+    
+    <link rel="prev" href="csv_sign.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    机密计算简介与现状
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../confidential_computing.html">
+            
+                <a href="../confidential_computing.html">
+            
+                    
+                    云原生机密计算SIG概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机密计算平台
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cc_platform/hygon_csv.html">
+            
+                <a href="../cc_platform/hygon_csv.html">
+            
+                    
+                    海光CSV：海光安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cc_platform/sgx_and_dcap.html">
+            
+                <a href="../cc_platform/sgx_and_dcap.html">
+            
+                    
+                    Intel SGX: Intel安全防护扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cc_platform/tdx.html">
+            
+                <a href="../cc_platform/tdx.html">
+            
+                    
+                    Intel TDX: Intel安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cc_platform/amd_sev.html">
+            
+                <a href="../cc_platform/amd_sev.html">
+            
+                    
+                    AMD SEV: AMD安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cc_platform/arm_cca.html">
+            
+                <a href="../cc_platform/arm_cca.html">
+            
+                    
+                    ARM CCA: Arm安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    编程框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../framework/sgx_cc.html">
+            
+                <a href="../framework/sgx_cc.html">
+            
+                    
+                    Intel SGX SDK/PSW/DCAP: Intel SGX软件开发套件和平台软件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../framework/intel_HE.html">
+            
+                <a href="../framework/intel_HE.html">
+            
+                    
+                    Intel Homomorphic Encryption: Intel平台同态加密加速框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../framework/he_development_guide.html">
+            
+                <a href="../framework/he_development_guide.html">
+            
+                    
+                    Intel_HE_Toolkit开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../framework/java_enclave.html">
+            
+                <a href="../framework/java_enclave.html">
+            
+                    
+                    Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../framework/java_enclave_development_guide.html">
+            
+                <a href="../framework/java_enclave_development_guide.html">
+            
+                    
+                    Apache_Teaclave_Java_TEE_SDK最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../framework/rats_tls.html">
+            
+                <a href="../framework/rats_tls.html">
+            
+                    
+                    RATS-TLS: 跨机密计算平台的双向传输层安全协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    运行时底座
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="csv_cc.html">
+            
+                <a href="csv_cc.html">
+            
+                    
+                    海光CSV机密容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="csv_runtime_attestation.html">
+            
+                <a href="csv_runtime_attestation.html">
+            
+                    
+                    基于runtime-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="csv_pre_attestation.html">
+            
+                <a href="csv_pre_attestation.html">
+            
+                    
+                    基于pre-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="csv_sign.html">
+            
+                <a href="csv_sign.html">
+            
+                    
+                    基于runtime-attestation使用签名容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="vcsv.html">
+            
+                <a href="vcsv.html">
+            
+                    
+                    海光CSV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tdx.html">
+            
+                <a href="tdx.html">
+            
+                    
+                    Intel TDX机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="vsgx.html">
+            
+                <a href="vsgx.html">
+            
+                    
+                    Intel vSGX：Intel SGX虚拟化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="run_vsgx.html">
+            
+                <a href="run_vsgx.html">
+            
+                    
+                    Intel SGX虚拟机最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="sev_cc.html">
+            
+                <a href="sev_cc.html">
+            
+                    
+                    AMD SEV机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="vsev.html">
+            
+                <a href="vsev.html">
+            
+                    
+                    AMD SEV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="occlum.html">
+            
+                <a href="occlum.html">
+            
+                    
+                    Occlum: 基于Intel SGX的轻量级LibOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="inclavare_containers.html">
+            
+                <a href="inclavare_containers.html">
+            
+                    
+                    Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="enclave_cc.html">
+            
+                <a href="enclave_cc.html">
+            
+                    
+                    Enclave-CC: 进程级机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../solution/cczoo.html">
+            
+                <a href="../solution/cczoo.html">
+            
+                    
+                    Intel Confidential Computing Zoo: Intel机密计算开源解决方案
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../solution/online_reasoning_service.html">
+            
+                <a href="../solution/online_reasoning_service.html">
+            
+                    
+                    部署TensorFlow Serving在线推理服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../solution/horizontal_federated_learning.html">
+            
+                <a href="../solution/horizontal_federated_learning.html">
+            
+                    
+                    部署TensorFlow横向联邦学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../solution/privacy_set_intersection.html">
+            
+                <a href="../solution/privacy_set_intersection.html">
+            
+                    
+                    部署隐私集合求交方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../solution/ppml.html">
+            
+                <a href="../solution/ppml.html">
+            
+                    
+                    PPML: 端到端隐私保护机器学习解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >海光CSV机密虚拟机</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6D77;&#x5149;csv&#x673A;&#x5BC6;&#x865A;&#x62DF;&#x673A;">&#x6D77;&#x5149;CSV&#x673A;&#x5BC6;&#x865A;&#x62DF;&#x673A;</h1>
+<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x4E3A;&#x60A8;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728; CSV&#x88F8;&#x91D1;&#x5C5E;/&#x7269;&#x7406;&#x673A;&#x73AF;&#x5883;&#x4E2D;&#x542F;&#x52A8;&#x4E00;&#x4E2A; CSV &#x865A;&#x62DF;&#x673A;&#x3002;</p>
+<h2 id="&#x80CC;&#x666F;&#x4FE1;&#x606F;">&#x80CC;&#x666F;&#x4FE1;&#x606F;</h2>
+<p>&#x6D77;&#x5149;CPU&#x652F;&#x6301;&#x5B89;&#x5168;&#x865A;&#x62DF;&#x5316;&#x6280;&#x672F;CSV(China Secure Virtualization)&#xFF0C;CSV&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x662F;&#x901A;&#x8FC7;CSV&#x865A;&#x62DF;&#x673A;&#x63D0;&#x4F9B;&#x53EF;&#x4FE1;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x9002;&#x7528;&#x7684;&#x573A;&#x666F;&#x5305;&#x62EC;&#x4E91;&#x8BA1;&#x7B97;&#x3001;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x7B49;&#x3002;&#x6D77;&#x5149;2&#x53F7;&#x652F;&#x6301;CSV1&#x6280;&#x672F;&#xFF0C;&#x63D0;&#x4F9B;&#x865A;&#x62DF;&#x673A;&#x5185;&#x5B58;&#x52A0;&#x5BC6;&#x80FD;&#x529B;&#xFF0C;&#x91C7;&#x7528;&#x56FD;&#x5BC6;SM4&#x7B97;&#x6CD5;&#xFF0C;&#x4E0D;&#x540C;&#x7684;CSV&#x865A;&#x62DF;&#x673A;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x52A0;&#x5BC6;&#x5BC6;&#x94A5;&#xFF0C;&#x5BC6;&#x94A5;&#x7531;&#x6D77;&#x5149;&#x5B89;&#x5168;&#x5904;&#x7406;&#x5668;&#x7BA1;&#x7406;&#xFF0C;&#x4E3B;&#x673A;&#x65E0;&#x6CD5;&#x89E3;&#x5BC6;&#x865A;&#x62DF;&#x673A;&#x7684;&#x52A0;&#x5BC6;&#x5185;&#x5B58;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x5B89;&#x88C5;edk2-ovmf">&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x5B89;&#x88C5;edk2-ovmf</h2>
+<p>&#x8BF7;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;edk2-ovmf&#x3002;OVMF&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;EDK II&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x7528;&#x4E8E;&#x865A;&#x62DF;&#x673A;&#x7684;UEFI&#x652F;&#x6301;&#xFF0C;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x8003;<a href="https://github.com/tianocore/tianocore.github.io/wiki/OVMF" target="_blank">OVMF</a></p>
+<pre><code class="lang-sh">yum install -y edk2-ovmf
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x5B89;&#x88C5;qemu-kvm">&#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x5B89;&#x88C5;qemu-kvm</h2>
+<p>&#x8BF7;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5; qemu-kvm&#x3002;Qemu&#x662F;&#x4E00;&#x6B3E;&#x5F00;&#x6E90;&#x7684;&#x6A21;&#x62DF;&#x5668;&#x548C;&#x865A;&#x62DF;&#x673A;&#x76D1;&#x89C6;&#x5668;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x3001;&#x52A0;&#x901F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x865A;&#x62DF;X86&#x3001;Power&#x3001;Arm&#x3001;MIPS&#x7B49;&#x5E73;&#x53F0;&#xFF0C;&#x5177;&#x6709;&#x9AD8;&#x901F;&#x3001;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x7279;&#x6027;&#x3002;qemu&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x4E8E;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x3001;&#x4EFF;&#x771F;&#x7B49;&#x9886;&#x57DF;&#x3002;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x8003;<a href="https://github.com/qemu/qemu" target="_blank">qemu</a></p>
+<pre><code class="lang-sh">yum install -y qemu-kvm
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x4E09;&#xFF1A;&#x5B89;&#x88C5;libvirt">&#x6B65;&#x9AA4;&#x4E09;&#xFF1A;&#x5B89;&#x88C5;libvirt</h2>
+<p>&#x8BF7;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;libvirt&#x3002;libvirt&#x662F;&#x4E00;&#x5957;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x865A;&#x62DF;&#x5316;&#x7684;&#x5F00;&#x6E90;API&#x3001;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x4E0E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x3002;&#x6B64;&#x5957;&#x7EC4;&#x4EF6;&#x53EF;&#x7528;&#x4E8E;&#x7BA1;&#x7406;KVM&#x3001;Xen&#x3001;VMware ESXi&#x3001;QEMU&#x53CA;&#x5176;&#x4ED6;&#x865A;&#x62DF;&#x5316;&#x6280;&#x672F;&#x3002;libvirt&#x5185;&#x7F6E;&#x7684;API&#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x4E91;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x865A;&#x62DF;&#x673A;&#x76D1;&#x89C6;&#x5668;&#x7F16;&#x6392;&#x5C42;&#xFF08;Orchestration Layer&#xFF09;&#x3002;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x8003;<a href="https://libvirt.org/index.html" target="_blank">libvirt</a></p>
+<pre><code class="lang-sh">yum install -y libvirt
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x56DB;&#xFF1A;&#x4E0B;&#x8F7D;guest-os&#x955C;&#x50CF;">&#x6B65;&#x9AA4;&#x56DB;&#xFF1A;&#x4E0B;&#x8F7D;Guest OS&#x955C;&#x50CF;</h2>
+<ul>
+<li>&#x8BF7;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x4ECE;&#x9F99;&#x8725;&#x793E;&#x533A;&#x4E0B;&#x8F7D; Anolis 8.6 &#x7684; Guest OS &#x955C;&#x50CF;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> /tmp
+wget https://anolis.oss-cn-hangzhou.aliyuncs.com/anolisos_8_6_x64_20G_anck_uefi_community_alibase_20220817.vhd
+</code></pre>
+<ul>
+<li>&#x5C06;vhd&#x683C;&#x5F0F;&#x955C;&#x50CF;&#x8F6C;&#x6362;&#x4E3A;qcow2&#x683C;&#x5F0F;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-sh">qemu-img convert -p <span class="hljs-_">-f</span> vpc anolis_8_4_x64_20G_uefi_anck_community_alibase_20220418.vhd -O qcow2 test.qcow2
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x4E94;&#xFF1A;&#x542F;&#x52A8;csv-guest&#x865A;&#x62DF;&#x673A;">&#x6B65;&#x9AA4;&#x4E94;&#xFF1A;&#x542F;&#x52A8;CSV guest&#x865A;&#x62DF;&#x673A;</h2>
+<h3 id="&#x542F;&#x52A8;&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x4F7F;&#x7528;-qemu-&#x547D;&#x4EE4;&#x884C;&#x542F;&#x52A8;">&#x542F;&#x52A8;&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x4F7F;&#x7528; QEMU &#x547D;&#x4EE4;&#x884C;&#x542F;&#x52A8;</h3>
+<p>&#x8BF7;&#x53C2;&#x8003;&#x5982;&#x4E0B;qemu&#x547D;&#x4EE4;&#x884C;&#x542F;&#x52A8;CSV guest&#x865A;&#x62DF;&#x673A;&#xFF1A;</p>
+<pre><code class="lang-sh">sudo /usr/libexec/qemu-kvm -enable-kvm -cpu host -smp 4 -m 4096 -drive <span class="hljs-keyword">if</span>=pflash,format=raw,unit=0,file=/usr/share/edk2/ovmf/OVMF_CODE.cc.fd,<span class="hljs-built_in">readonly</span>=on  -hda test.qcow2 -object sev-guest,id=sev0,policy=0x1,cbitpos=47,reduced-phys-bits=5 -machine memory-encryption=sev0 -name <span class="hljs-built_in">test</span> -monitor stdio
+</code></pre>
+<h3 id="&#x542F;&#x52A8;&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;virsh&#x542F;&#x52A8;">&#x542F;&#x52A8;&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;virsh&#x542F;&#x52A8;</h3>
+<p>virsh &#x662F;&#x7528;&#x4E8E;&#x7BA1;&#x7406; &#x865A;&#x62DF;&#x5316;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x5BA2;&#x6237;&#x673A;&#x548C; Hypervisor &#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x4E0E; virt-manager &#x7B49;&#x5DE5;&#x5177;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x901A;&#x8FC7; libvirt API &#x6765;&#x5B9E;&#x73B0;&#x865A;&#x62DF;&#x5316;&#x7684;&#x7BA1;&#x7406;&#x3002;virsh &#x662F;&#x5B8C;&#x5168;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C;&#x7684;&#x7528;&#x6237;&#x6001;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x662F;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x865A;&#x62DF;&#x5316;&#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x548C;&#x7BA1;&#x7406;&#x7684;&#x7406;&#x60F3;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#x3002;</p>
+<h4 id="&#x914D;&#x7F6E;libvirt">&#x914D;&#x7F6E;libvirt</h4>
+<p>&#x8BF7;&#x5C06;/etc/libvirt/qemu.conf&#x4E2D;&#x7684;user&#x548C;group&#x8BBE;&#x7F6E;&#x4E3A;root&#xFF0C;&#x4EE5;&#x514D;&#x51FA;&#x73B0;&#x6743;&#x9650;&#x95EE;&#x9898;&#x548C;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre><code class="lang-sh">442 <span class="hljs-comment"># Some examples of valid values are:</span>
+443 <span class="hljs-comment">#</span>
+444 <span class="hljs-comment">#       user = &quot;qemu&quot;   # A user named &quot;qemu&quot;</span>
+445 <span class="hljs-comment">#       user = &quot;+0&quot;     # Super user (uid=0)</span>
+446 <span class="hljs-comment">#       user = &quot;100&quot;    # A user named &quot;100&quot; or a user with uid=100</span>
+447 <span class="hljs-comment">#</span>
+448 user = <span class="hljs-string">&quot;root&quot;</span>
+449
+450 <span class="hljs-comment"># The group for QEMU processes run by the system instance. It can be</span>
+451 <span class="hljs-comment"># specified in a similar way to user.</span>
+452 group = <span class="hljs-string">&quot;root&quot;</span>
+453
+</code></pre>
+<h4 id="&#x91CD;&#x542F;libvirtd&#x670D;&#x52A1;">&#x91CD;&#x542F;libvirtd&#x670D;&#x52A1;</h4>
+<pre><code class="lang-sh">systemctl daemon-reload
+service libvirtd restart
+</code></pre>
+<h4 id="&#x521B;&#x5EFA;csv-guest&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x521B;&#x5EFA;CSV guest&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p>&#x4EE5;&#x4E0B;&#x662F;CSV&#x865A;&#x62DF;&#x673A;&#x7684;&#x53C2;&#x8003;&#x914D;&#x7F6E;&#x6587;&#x4EF6;csv_launch.xml&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8BF7;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#xFF0C;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x5B57;&#x6BB5;&#x3002;&#x66F4;&#x591A;&#x914D;&#x7F6E;&#x8BF7;&#x53C2;&#x8003;<a href="https://libvirt.org/kbase/launch_security_sev.html" target="_blank">Launch security with AMD SEV</a></p>
+<pre><code class="lang-sh">&lt;domain <span class="hljs-built_in">type</span> = <span class="hljs-string">&apos;kvm&apos;</span>  xmlns:qemu=<span class="hljs-string">&apos;http://libvirt.org/schemas/domain/qemu/1.0&apos;</span>&gt;
+    &lt;name&gt;csv_launch&lt;/name&gt;
+    &lt;memory unit=<span class="hljs-string">&apos;GiB&apos;</span>&gt;4&lt;/memory&gt;
+    &lt;vcpu&gt;4&lt;/vcpu&gt;
+    &lt;os&gt;
+        &lt;<span class="hljs-built_in">type</span> arch = <span class="hljs-string">&apos;x86_64&apos;</span> machine = <span class="hljs-string">&apos;pc&apos;</span>&gt;hvm&lt;/<span class="hljs-built_in">type</span>&gt;
+        &lt;boot dev = <span class="hljs-string">&apos;hd&apos;</span>/&gt;
+    &lt;/os&gt;
+    &lt;features&gt;
+        &lt;acpi/&gt;
+        &lt;apic/&gt;
+        &lt;pae/&gt;
+    &lt;/features&gt;
+    &lt;clock offset = <span class="hljs-string">&apos;utc&apos;</span>/&gt;
+    &lt;on_poweroff&gt;destroy&lt;/on_poweroff&gt;
+    &lt;on_reboot&gt;restart&lt;/on_reboot&gt;
+    &lt;on_crash&gt;destroy&lt;/on_crash&gt;
+    &lt;devices&gt;
+        &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;
+        &lt;disk <span class="hljs-built_in">type</span> = <span class="hljs-string">&apos;file&apos;</span> device = <span class="hljs-string">&apos;disk&apos;</span>&gt;
+            &lt;driver name = <span class="hljs-string">&apos;qemu&apos;</span> <span class="hljs-built_in">type</span> = <span class="hljs-string">&apos;qcow2&apos;</span> cache = <span class="hljs-string">&apos;none&apos;</span>/&gt;
+            &lt;<span class="hljs-built_in">source</span> file = <span class="hljs-string">&apos;/tmp/test.qcow2&apos;</span>/&gt;
+            &lt;target dev = <span class="hljs-string">&apos;hda&apos;</span> bus = <span class="hljs-string">&apos;ide&apos;</span>/&gt;
+        &lt;/disk&gt;
+        &lt;memballoon model=<span class="hljs-string">&apos;none&apos;</span>/&gt;
+        &lt;graphics <span class="hljs-built_in">type</span>=<span class="hljs-string">&apos;vnc&apos;</span> port=<span class="hljs-string">&apos;-1&apos;</span> autoport=<span class="hljs-string">&apos;yes&apos;</span> listen=<span class="hljs-string">&apos;0.0.0.0&apos;</span> keymap=<span class="hljs-string">&apos;en-us&apos;</span>&gt;
+            &lt;listen <span class="hljs-built_in">type</span>=<span class="hljs-string">&apos;address&apos;</span> address=<span class="hljs-string">&apos;0.0.0.0&apos;</span>/&gt;
+        &lt;/graphics&gt;
+    &lt;/devices&gt;
+
+    &lt;launchSecurity <span class="hljs-built_in">type</span>=<span class="hljs-string">&apos;sev&apos;</span>&gt;
+        &lt;policy&gt;0x0001&lt;/policy&gt;
+        &lt;cbitpos&gt;47&lt;/cbitpos&gt;
+        &lt;reducedPhysBits&gt;5&lt;/reducedPhysBits&gt;
+    &lt;/launchSecurity&gt;
+
+    &lt;qemu:commandline&gt;
+        &lt;qemu:arg value=<span class="hljs-string">&quot;-drive&quot;</span>/&gt;
+        &lt;qemu:arg value=<span class="hljs-string">&quot;if=pflash,format=raw,unit=0,file=/usr/share/edk2/ovmf/OVMF_CODE.cc.fd,readonly=on&quot;</span>/&gt;
+    &lt;/qemu:commandline&gt;
+&lt;/domain&gt;
+</code></pre>
+<h4 id="&#x542F;&#x52A8;csv&#x865A;&#x62DF;&#x673A;">&#x542F;&#x52A8;CSV&#x865A;&#x62DF;&#x673A;</h4>
+<pre><code class="lang-sh">sudo virsh create csv_launch.xml
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;&#x516D;&#xFF1A;&#x68C0;&#x67E5;guest&#x7684;csv&#x4F7F;&#x80FD;&#x72B6;&#x6001;">&#x6B65;&#x9AA4;&#x516D;&#xFF1A;&#x68C0;&#x67E5;guest&#x7684;CSV&#x4F7F;&#x80FD;&#x72B6;&#x6001;</h2>
+<ul>
+<li>&#x8BF7;&#x4F7F;&#x7528;vnc&#x6216;&#x5176;&#x4ED6;&#x8FDC;&#x7A0B;&#x5DE5;&#x5177;&#x8FDE;&#x63A5;guest</li>
+<li>anolis&#x955C;&#x50CF;&#x9ED8;&#x8BA4;&#x7528;&#x6237;&#x540D;anuser&#xFF0C;&#x5BC6;&#x7801;anolisos</li>
+</ul>
+<pre><code class="lang-sh">localhost login: anuser
+Password: anolisos
+</code></pre>
+<p>&#x767B;&#x5F55;&#x865A;&#x62DF;&#x673A;&#x540E;&#xFF0C;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-sh">dmesg | grep -i sev
+</code></pre>
+<p>&#x663E;&#x793A;&#x5185;&#x5BB9;&#x5E94;&#x7C7B;&#x4F3C;&#x5982;&#x4E0B;&#xFF0C;&#x5219;&#x8BC1;&#x660E;CSV&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code class="lang-sh">[    0.129692] AMD Secure Encrypted Virtualization (SEV) active
+[    1.886794] software IO TLB: SEV is active and system is using DMA bounce buffers
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2023-03-07 20:07:52
+</span></footer>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="csv_sign.html" class="navigation navigation-prev " aria-label="Previous page: 基于runtime-attestation使用签名容器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tdx.html" class="navigation navigation-next " aria-label="Next page: Intel TDX机密容器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"海光CSV机密虚拟机","level":"1.5.2","depth":2,"next":{"title":"Intel TDX机密容器","level":"1.5.3","depth":2,"path":"runtime/tdx.md","ref":"./runtime/tdx.md","articles":[]},"previous":{"title":"基于runtime-attestation使用签名容器","level":"1.5.1.3","depth":3,"path":"runtime/csv_sign.md","ref":"./runtime/csv_sign.md","articles":[]},"dir":"ltr"},"config":{"plugins":["alerts","tbfed-pagefooter","sectionx","expandable-chapters","chapter-fold","emphasize","chapter-fold","hide-element","tags","text-highlight","hints","-sharing","sharing-plus","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{},"chapter-fold":{},"emphasize":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"text-highlight":{},"highlight":{},"alerts":{},"tags":{"placement":"top"},"sharing":{"qq":false,"all":["weibo"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"edit-link":{"label":"编辑","base":"https://github.com/houhuiting/cncc-sig-white-paper/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"CNCC-sig.cn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CNCC-sig","language":"zh-hans","gitbook":">= 3.2.2","description":"CNCC-sig"},"file":{"path":"runtime/vcsv.md","mtime":"2023-03-07T12:07:52.104Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-17T12:57:24.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

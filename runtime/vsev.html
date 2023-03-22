@@ -1,0 +1,971 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AMD SEV机密虚拟机 · CNCC-sig</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="CNCC-sig.cn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tags/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="occlum.html" />
+    
+    
+    <link rel="prev" href="sev_cc.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    机密计算简介与现状
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../confidential_computing.html">
+            
+                <a href="../confidential_computing.html">
+            
+                    
+                    云原生机密计算SIG概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机密计算平台
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cc_platform/hygon_csv.html">
+            
+                <a href="../cc_platform/hygon_csv.html">
+            
+                    
+                    海光CSV：海光安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cc_platform/sgx_and_dcap.html">
+            
+                <a href="../cc_platform/sgx_and_dcap.html">
+            
+                    
+                    Intel SGX: Intel安全防护扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cc_platform/tdx.html">
+            
+                <a href="../cc_platform/tdx.html">
+            
+                    
+                    Intel TDX: Intel安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cc_platform/amd_sev.html">
+            
+                <a href="../cc_platform/amd_sev.html">
+            
+                    
+                    AMD SEV: AMD安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cc_platform/arm_cca.html">
+            
+                <a href="../cc_platform/arm_cca.html">
+            
+                    
+                    ARM CCA: Arm安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    编程框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../framework/sgx_cc.html">
+            
+                <a href="../framework/sgx_cc.html">
+            
+                    
+                    Intel SGX SDK/PSW/DCAP: Intel SGX软件开发套件和平台软件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../framework/intel_HE.html">
+            
+                <a href="../framework/intel_HE.html">
+            
+                    
+                    Intel Homomorphic Encryption: Intel平台同态加密加速框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../framework/he_development_guide.html">
+            
+                <a href="../framework/he_development_guide.html">
+            
+                    
+                    Intel_HE_Toolkit开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../framework/java_enclave.html">
+            
+                <a href="../framework/java_enclave.html">
+            
+                    
+                    Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../framework/java_enclave_development_guide.html">
+            
+                <a href="../framework/java_enclave_development_guide.html">
+            
+                    
+                    Apache_Teaclave_Java_TEE_SDK最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../framework/rats_tls.html">
+            
+                <a href="../framework/rats_tls.html">
+            
+                    
+                    RATS-TLS: 跨机密计算平台的双向传输层安全协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    运行时底座
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="csv_cc.html">
+            
+                <a href="csv_cc.html">
+            
+                    
+                    海光CSV机密容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="csv_runtime_attestation.html">
+            
+                <a href="csv_runtime_attestation.html">
+            
+                    
+                    基于runtime-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="csv_pre_attestation.html">
+            
+                <a href="csv_pre_attestation.html">
+            
+                    
+                    基于pre-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="csv_sign.html">
+            
+                <a href="csv_sign.html">
+            
+                    
+                    基于runtime-attestation使用签名容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="vcsv.html">
+            
+                <a href="vcsv.html">
+            
+                    
+                    海光CSV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tdx.html">
+            
+                <a href="tdx.html">
+            
+                    
+                    Intel TDX机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="vsgx.html">
+            
+                <a href="vsgx.html">
+            
+                    
+                    Intel vSGX：Intel SGX虚拟化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="run_vsgx.html">
+            
+                <a href="run_vsgx.html">
+            
+                    
+                    Intel SGX虚拟机最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="sev_cc.html">
+            
+                <a href="sev_cc.html">
+            
+                    
+                    AMD SEV机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.6" data-path="vsev.html">
+            
+                <a href="vsev.html">
+            
+                    
+                    AMD SEV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="occlum.html">
+            
+                <a href="occlum.html">
+            
+                    
+                    Occlum: 基于Intel SGX的轻量级LibOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="inclavare_containers.html">
+            
+                <a href="inclavare_containers.html">
+            
+                    
+                    Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="enclave_cc.html">
+            
+                <a href="enclave_cc.html">
+            
+                    
+                    Enclave-CC: 进程级机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../solution/cczoo.html">
+            
+                <a href="../solution/cczoo.html">
+            
+                    
+                    Intel Confidential Computing Zoo: Intel机密计算开源解决方案
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../solution/online_reasoning_service.html">
+            
+                <a href="../solution/online_reasoning_service.html">
+            
+                    
+                    部署TensorFlow Serving在线推理服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../solution/horizontal_federated_learning.html">
+            
+                <a href="../solution/horizontal_federated_learning.html">
+            
+                    
+                    部署TensorFlow横向联邦学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../solution/privacy_set_intersection.html">
+            
+                <a href="../solution/privacy_set_intersection.html">
+            
+                    
+                    部署隐私集合求交方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../solution/ppml.html">
+            
+                <a href="../solution/ppml.html">
+            
+                    
+                    PPML: 端到端隐私保护机器学习解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AMD SEV机密虚拟机</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="amd-sev&#x673A;&#x5BC6;&#x865A;&#x62DF;&#x673A;">AMD SEV&#x673A;&#x5BC6;&#x865A;&#x62DF;&#x673A;</h1>
+<h2 id="&#x80CC;&#x666F;&#x4FE1;&#x606F;">&#x80CC;&#x666F;&#x4FE1;&#x606F;</h2>
+<p>AMD SEV &#x6280;&#x672F;&#x57FA;&#x4E8E;AMD EPYC CPU&#xFF0C;&#x5C06;&#x7269;&#x7406;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x80FD;&#x529B;&#x4F20;&#x5BFC;&#x81F3;&#x865A;&#x62DF;&#x673A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x516C;&#x6709;&#x4E91;&#x4E0A;&#x6253;&#x9020;&#x4E00;&#x4E2A;&#x7ACB;&#x4F53;&#x5316;&#x53EF;&#x4FE1;&#x52A0;&#x5BC6;&#x73AF;&#x5883;&#x3002; 
+SEV&#x53EF;&#x4FDD;&#x8BC1;&#x5355;&#x4E2A;&#x865A;&#x62DF;&#x673A;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528;&#x72EC;&#x7ACB;&#x7684;&#x786C;&#x4EF6;&#x5BC6;&#x94A5;&#x5BF9;&#x5185;&#x5B58;&#x52A0;&#x5BC6;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x9AD8;&#x6027;&#x80FD;&#x652F;&#x6301;&#x3002;&#x5BC6;&#x94A5;&#x7531; AMD &#x5E73;&#x53F0;&#x5B89;&#x5168;&#x5904;&#x7406;&#x5668; (PSP)&#x5728;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x671F;&#x95F4;&#x751F;&#x6210;&#xFF0C;&#x800C;&#x4E14;&#x4EC5;&#x4F4D;&#x4E8E;&#x5904;&#x7406;&#x5668;&#x4E2D;&#xFF0C;&#x4E91;&#x5382;&#x5546;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x5BC6;&#x94A5;&#x3002;</p>
+<h2 id="&#x6D4B;&#x8BD5;&#x73AF;&#x5883;">&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</h2>
+<h3 id="&#x786C;&#x4EF6;&#x914D;&#x7F6E;">&#x786C;&#x4EF6;&#x914D;&#x7F6E;</h3>
+<p>CPU: AMD EPYC 7763   *1</p>
+<p>Memory: DDR4 3200 32G   *16</p>
+<h3 id="&#x8F6F;&#x4EF6;&#x4FE1;&#x606F;">&#x8F6F;&#x4EF6;&#x4FE1;&#x606F;</h3>
+<p>OS: Anolis 8.5.0-10.0.1</p>
+<p>Kernel: 5.10.134-12.1.an8.x86_64</p>
+<h2 id="&#x7B2C;&#x4E00;&#x6B65;-&#x5F00;&#x542F;-sme&#x548C;-sev">&#x7B2C;&#x4E00;&#x6B65; &#x5F00;&#x542F; SME&#x548C; SEV</h2>
+<h3 id="&#x5F00;&#x542F;-sme">&#x5F00;&#x542F; SME</h3>
+<p>&#x5C06; mem_encrypt=on &#x6DFB;&#x52A0;&#x5230;kernel&#x7684;&#x5F15;&#x5BFC;&#x53C2;&#x6570;</p>
+<h3 id="enable-sev">Enable SEV</h3>
+<p>&#x5C06; kvm_amd.sev=1 kvm.&#x6DFB;&#x52A0;&#x5230;kernel&#x7684;&#x5F15;&#x5BFC;&#x53C2;&#x6570;&#x4E2D;</p>
+<h3 id="&#x786E;&#x4FDD;kernel&#x7684;&#x5F15;&#x5BFC;&#x53C2;&#x6570;&#x751F;&#x6548;">&#x786E;&#x4FDD;Kernel&#x7684;&#x5F15;&#x5BFC;&#x53C2;&#x6570;&#x751F;&#x6548;</h3>
+<ol>
+<li>vim /etc/default/grub</li>
+<li>&#x589E;&#x52A0; &quot;kvm_amd.sev=1 mem_encrypt=on&quot; &#x5230; &quot;GRUB_CMDLINE_LINUX_DEFAULT=&quot; &#x8FD9;&#x4E00;&#x884C;</li>
+<li>grub2-mkconfig -o /boot/efi/EFI/anolis/grub.cfg</li>
+</ol>
+<h2 id="&#x7B2C;&#x4E8C;&#x6B65;-&#x91CD;&#x542F;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x5165;bios&#x5F00;&#x542F;sev&#x76F8;&#x5173;&#x9009;&#x9879;">&#x7B2C;&#x4E8C;&#x6B65; &#x91CD;&#x542F;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x5165;BIOS&#x5F00;&#x542F;SEV&#x76F8;&#x5173;&#x9009;&#x9879;</h2>
+<h3 id="bios-&#x914D;&#x7F6E;&#x9879;&#x5982;&#x4E0B;">BIOS &#x914D;&#x7F6E;&#x9879;&#x5982;&#x4E0B;</h3>
+<ol>
+<li>Advanced-&gt;AMD CBS-&gt;CPU Common Options-&gt;SMEE-&gt;Enable</li>
+<li>Advanced-&gt;AMD CBS-&gt;NBIO Common Options-&gt;IOMMU-&gt;Enabled</li>
+<li>Advanced-&gt;AMD CBS-&gt;NBIO Common Options-&gt;SEV-SNP Support-&gt;Enable</li>
+</ol>
+<h3 id="anolis-os-&#x5BF9;sev&#x7684;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x786E;&#x8BA4;">Anolis OS &#x5BF9;SEV&#x7684;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x786E;&#x8BA4;</h3>
+<ol>
+<li>cat /proc/cmdline</li>
+</ol>
+<p>&#x786E;&#x4FDD;&#x8F93;&#x51FA;&#x6709;&quot;mem_encrypt=on kvm_amd.sev=1&quot;</p>
+<p>&#x7C7B;&#x4F3C;&#x8F93;&#x51FA;&#x5982;&#x4E0B;</p>
+<pre><code>BOOT_IMAGE=(hd1,gpt2)/vmlinuz-5.10.134-12.1.an8.x86_64 root=/dev/mapper/ao-root ro crashkernel=auto resume=/dev/mapper/ao-swap rd.lvm.lv=ao/root rd.lvm.lv=ao/swap rhgb quiet mem_encrypt=on kvm_amd.sev=1 kvm_amd.sev_es=1
+</code></pre><ol>
+<li>dmesg | grep -i SEV</li>
+</ol>
+<p>&#x786E;&#x4FDD;&#x8F93;&#x51FA;&#x6709; &quot;SEV supported&quot;</p>
+<p>&#x7C7B;&#x4F3C;&#x8F93;&#x51FA;&#x5982;&#x4E0B;</p>
+<pre><code>[    5.145496] ccp 0000:47:00.1: sev enabled
+[    5.234221] ccp 0000:47:00.1: SEV API:1.49 build:6
+[    5.445958] SEV supported: 253 ASIDs
+</code></pre><ol>
+<li>cat /sys/module/kvm_amd/parameters/sev</li>
+</ol>
+<p>&#x786E;&#x4FDD;&#x8F93;&#x51FA;&#x503C;&#x662F; &quot;1&quot; &#x6216;&#x8005; &quot;Y&quot;</p>
+<h2 id="&#x7B2C;&#x4E09;&#x6B65;-&#x542F;&#x52A8;&#x865A;&#x62DF;&#x673A;&#x76F8;&#x5173;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x7B2C;&#x4E09;&#x6B65; &#x542F;&#x52A8;&#x865A;&#x62DF;&#x673A;&#x76F8;&#x5173;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
+<ol>
+<li>yum update &amp;&amp; yum upgrade</li>
+<li>yum install libvirt-daemon virt-manager libvirt-client qemu-kvm epel-release cloud-utils virt-install</li>
+<li>virsh domcapabilities</li>
+</ol>
+<p>&#x786E;&#x4FDD;&#x8F93;&#x51FA;&#x6709; &quot;sev supported=&apos;yes&apos;&quot;</p>
+<p>&#x7C7B;&#x4F3C;&#x8F93;&#x51FA;&#x5982;&#x4E0B;</p>
+<pre><code>   &lt;sev supported=&apos;yes&apos;&gt;
+      &lt;cbitpos&gt;51&lt;/cbitpos&gt;
+      &lt;reducedPhysBits&gt;1&lt;/reducedPhysBits&gt;
+      &lt;maxGuests&gt;253&lt;/maxGuests&gt;
+      &lt;maxESGuests&gt;0&lt;/maxESGuests&gt;
+    &lt;/sev&gt;
+</code></pre><h3 id="vm-&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x914D;&#x7F6E;">VM &#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x914D;&#x7F6E;</h3>
+<ol>
+<li>&#x521B;&#x5EFA;&#x9ED8;&#x8BA4;&#x7684;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x914D;&#x7F6E; default.xml</li>
+</ol>
+<pre><code>&lt;network&gt;
+  &lt;name&gt;default&lt;/name&gt;
+  &lt;forward mode=&apos;nat&apos;/&gt;
+  &lt;bridge name=&apos;virbr0&apos; stp=&apos;on&apos; delay=&apos;0&apos;/&gt;
+  &lt;mac address=&apos;52:54:00:0a:cd:21&apos;/&gt;
+  &lt;ip address=&apos;192.168.122.1&apos; netmask=&apos;255.255.255.0&apos;&gt;
+    &lt;dhcp&gt;
+      &lt;range start=&apos;192.168.122.2&apos; end=&apos;192.168.122.254&apos;/&gt;
+    &lt;/dhcp&gt;
+  &lt;/ip&gt;
+&lt;/network&gt;
+</code></pre><ol>
+<li>virsh net-define --file default.xml</li>
+<li>virsh net-start default</li>
+<li>virsh net-autostart --network default</li>
+</ol>
+<h2 id="&#x7B2C;&#x56DB;&#x6B65;--vm-&#x955C;&#x50CF;&#x7684;&#x914D;&#x7F6E;">&#x7B2C;&#x56DB;&#x6B65;  VM &#x955C;&#x50CF;&#x7684;&#x914D;&#x7F6E;</h2>
+<h3 id="ubuntu-&#x4F5C;&#x4E3A;vm">ubuntu &#x4F5C;&#x4E3A;VM</h3>
+<ol>
+<li>wget <a href="https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img" target="_blank">https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img</a></li>
+<li>qemu-img convert focal-server-cloudimg-amd64.img /var/lib/libvirt/images/sev-guest.img</li>
+<li>&#x521B;&#x5EFA;VM&#x955C;&#x50CF;&#x7528;&#x6237;&#x548C;&#x5BC6;&#x7801;&#x914D;&#x7F6E;&#x6587;&#x4EF6; cloud-config</li>
+</ol>
+<pre><code>#cloud-config
+ssh_pwauth: True
+password: 123456
+chpasswd: { expire: False }
+
+chpasswd:
+  list: |
+     root:123456
+     ubuntu:123456
+  expire: False
+</code></pre><ol>
+<li>cloud-localds /var/lib/libvirt/images/init-passwd.iso cloud-config</li>
+</ol>
+<h2 id="&#x7B2C;&#x4E94;&#x6B65;-&#x542F;&#x52A8;vm">&#x7B2C;&#x4E94;&#x6B65; &#x542F;&#x52A8;VM</h2>
+<h3 id="virsh-&#x5B89;&#x88C5;&#x7684;&#x65B9;&#x5F0F;">virsh &#x5B89;&#x88C5;&#x7684;&#x65B9;&#x5F0F;</h3>
+<pre><code>virt-install \
+              --name sev-guest \
+              --memory 4096 \
+              --memtune hard_limit=4563402 \
+              --boot uefi \
+              --disk /var/lib/libvirt/images/sev-guest.img,device=disk,bus=scsi \
+              --disk /var/lib/libvirt/images/init-passwd.iso,device=cdrom \
+              --os-type linux \
+              --os-variant centos8 \
+              --import \
+              --controller type=scsi,model=virtio-scsi,driver.iommu=on \
+              --controller type=virtio-serial,driver.iommu=on \
+              --network network=default,model=virtio,driver.iommu=on \
+              --memballoon driver.iommu=on \
+              --graphics none \
+              --launchSecurity sev
+</code></pre><h3 id="virsh-&#x7528;xml&#x6587;&#x4EF6;-&#x542F;&#x52A8;">virsh &#x7528;xml&#x6587;&#x4EF6; &#x542F;&#x52A8;</h3>
+<ul>
+<li>&#x521B;&#x5EFA;sev.xml &#x6587;&#x4EF6;,&#x5185;&#x5BB9;&#x5982;&#x4E0B;</li>
+</ul>
+<pre><code>&lt;domain type = &apos;kvm&apos;  xmlns:qemu=&apos;http://libvirt.org/schemas/domain/qemu/1.0&apos;&gt;
+    &lt;name&gt;csv_launch&lt;/name&gt;
+    &lt;memory unit=&apos;GiB&apos;&gt;4&lt;/memory&gt;
+    &lt;vcpu&gt;4&lt;/vcpu&gt;
+    &lt;os&gt;
+        &lt;type arch = &apos;x86_64&apos; machine = &apos;pc&apos;&gt;hvm&lt;/type&gt;
+        &lt;boot dev = &apos;hd&apos;/&gt;
+    &lt;/os&gt;
+    &lt;features&gt;
+        &lt;acpi/&gt;
+        &lt;apic/&gt;
+        &lt;pae/&gt;
+    &lt;/features&gt;
+    &lt;clock offset = &apos;utc&apos;/&gt;
+    &lt;on_poweroff&gt;destroy&lt;/on_poweroff&gt;
+    &lt;on_reboot&gt;restart&lt;/on_reboot&gt;
+    &lt;on_crash&gt;destroy&lt;/on_crash&gt;
+    &lt;devices&gt;
+        &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;
+        &lt;disk type = &apos;file&apos; device = &apos;disk&apos;&gt;
+            &lt;driver name = &apos;qemu&apos; type = &apos;qcow2&apos; cache = &apos;none&apos;/&gt;
+            &lt;source file = &apos;/tmp/test.qcow2&apos;/&gt;
+            &lt;target dev = &apos;hda&apos; bus = &apos;ide&apos;/&gt;
+        &lt;/disk&gt;
+        &lt;memballoon model=&apos;none&apos;/&gt;
+        &lt;graphics type=&apos;vnc&apos; port=&apos;-1&apos; autoport=&apos;yes&apos; listen=&apos;0.0.0.0&apos; keymap=&apos;en-us&apos;&gt;
+            &lt;listen type=&apos;address&apos; address=&apos;0.0.0.0&apos;/&gt;
+        &lt;/graphics&gt;
+    &lt;/devices&gt;
+
+    &lt;launchSecurity type=&apos;sev&apos;&gt;
+        &lt;policy&gt;0x0001&lt;/policy&gt;
+        &lt;cbitpos&gt;51&lt;/cbitpos&gt;
+        &lt;reducedPhysBits&gt;1&lt;/reducedPhysBits&gt;
+    &lt;/launchSecurity&gt;
+
+    &lt;qemu:commandline&gt;
+        &lt;qemu:arg value=&quot;-drive&quot;/&gt;
+        &lt;qemu:arg value=&quot;if=pflash,format=raw,unit=0,file=/usr/share/edk2/ovmf/OVMF_CODE.cc.fd,readonly=on&quot;/&gt;
+    &lt;/qemu:commandline&gt;
+&lt;/domain&gt;
+</code></pre><ul>
+<li>&#x5BFC;&#x5165;sev-guest&#x865A;&#x62DF;&#x673A;</li>
+</ul>
+<p>virsh define sev.xml</p>
+<ul>
+<li>&#x5F00;&#x542F;&#x865A;&#x62DF;&#x673A;</li>
+</ul>
+<p>virsh start sev-guest</p>
+<h2 id="step-6-&#x68C0;&#x67E5;sev-&#x5728;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x662F;&#x5426;&#x5F00;&#x542F;">Step 6 &#x68C0;&#x67E5;SEV &#x5728;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x662F;&#x5426;&#x5F00;&#x542F;</h2>
+<ol>
+<li>virsh console sev-guest</li>
+<li>dmesg | grep SEV<pre><code>[    0.374549] AMD Memory Encryption Features active: SEV
+</code></pre></li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2023-03-07 20:07:42
+</span></footer>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sev_cc.html" class="navigation navigation-prev " aria-label="Previous page: AMD SEV机密容器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="occlum.html" class="navigation navigation-next " aria-label="Next page: Occlum: 基于Intel SGX的轻量级LibOS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AMD SEV机密虚拟机","level":"1.5.6","depth":2,"next":{"title":"Occlum: 基于Intel SGX的轻量级LibOS","level":"1.5.7","depth":2,"path":"runtime/occlum.md","ref":"./runtime/occlum.md","articles":[]},"previous":{"title":"AMD SEV机密容器","level":"1.5.5","depth":2,"path":"runtime/sev_cc.md","ref":"./runtime/sev_cc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["alerts","tbfed-pagefooter","sectionx","expandable-chapters","chapter-fold","emphasize","chapter-fold","hide-element","tags","text-highlight","hints","-sharing","sharing-plus","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{},"chapter-fold":{},"emphasize":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"text-highlight":{},"highlight":{},"alerts":{},"tags":{"placement":"top"},"sharing":{"qq":false,"all":["weibo"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"edit-link":{"label":"编辑","base":"https://github.com/houhuiting/cncc-sig-white-paper/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"CNCC-sig.cn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CNCC-sig","language":"zh-hans","gitbook":">= 3.2.2","description":"CNCC-sig"},"file":{"path":"runtime/vsev.md","mtime":"2023-03-07T12:07:42.360Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-17T12:57:24.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

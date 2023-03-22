@@ -1,0 +1,816 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架 · CNCC-sig</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="CNCC-sig.cn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tags/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="java_enclave_development_guide.html" />
+    
+    
+    <link rel="prev" href="he_development_guide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    机密计算简介与现状
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../confidential_computing.html">
+            
+                <a href="../confidential_computing.html">
+            
+                    
+                    云原生机密计算SIG概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机密计算平台
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cc_platform/hygon_csv.html">
+            
+                <a href="../cc_platform/hygon_csv.html">
+            
+                    
+                    海光CSV：海光安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../cc_platform/sgx_and_dcap.html">
+            
+                <a href="../cc_platform/sgx_and_dcap.html">
+            
+                    
+                    Intel SGX: Intel安全防护扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cc_platform/tdx.html">
+            
+                <a href="../cc_platform/tdx.html">
+            
+                    
+                    Intel TDX: Intel安全虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cc_platform/amd_sev.html">
+            
+                <a href="../cc_platform/amd_sev.html">
+            
+                    
+                    AMD SEV: AMD安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cc_platform/arm_cca.html">
+            
+                <a href="../cc_platform/arm_cca.html">
+            
+                    
+                    ARM CCA: Arm安全加密虚拟化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    编程框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="sgx_cc.html">
+            
+                <a href="sgx_cc.html">
+            
+                    
+                    Intel SGX SDK/PSW/DCAP: Intel SGX软件开发套件和平台软件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="intel_HE.html">
+            
+                <a href="intel_HE.html">
+            
+                    
+                    Intel Homomorphic Encryption: Intel平台同态加密加速框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="he_development_guide.html">
+            
+                <a href="he_development_guide.html">
+            
+                    
+                    Intel_HE_Toolkit开发指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="java_enclave.html">
+            
+                <a href="java_enclave.html">
+            
+                    
+                    Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="java_enclave_development_guide.html">
+            
+                <a href="java_enclave_development_guide.html">
+            
+                    
+                    Apache_Teaclave_Java_TEE_SDK最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="rats_tls.html">
+            
+                <a href="rats_tls.html">
+            
+                    
+                    RATS-TLS: 跨机密计算平台的双向传输层安全协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    运行时底座
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../runtime/csv_cc.html">
+            
+                <a href="../runtime/csv_cc.html">
+            
+                    
+                    海光CSV机密容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../runtime/csv_runtime_attestation.html">
+            
+                <a href="../runtime/csv_runtime_attestation.html">
+            
+                    
+                    基于runtime-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../runtime/csv_pre_attestation.html">
+            
+                <a href="../runtime/csv_pre_attestation.html">
+            
+                    
+                    基于pre-attestation使用机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../runtime/csv_sign.html">
+            
+                <a href="../runtime/csv_sign.html">
+            
+                    
+                    基于runtime-attestation使用签名容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../runtime/vcsv.html">
+            
+                <a href="../runtime/vcsv.html">
+            
+                    
+                    海光CSV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../runtime/tdx.html">
+            
+                <a href="../runtime/tdx.html">
+            
+                    
+                    Intel TDX机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../runtime/vsgx.html">
+            
+                <a href="../runtime/vsgx.html">
+            
+                    
+                    Intel vSGX：Intel SGX虚拟化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../runtime/run_vsgx.html">
+            
+                <a href="../runtime/run_vsgx.html">
+            
+                    
+                    Intel SGX虚拟机最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../runtime/sev_cc.html">
+            
+                <a href="../runtime/sev_cc.html">
+            
+                    
+                    AMD SEV机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../runtime/vsev.html">
+            
+                <a href="../runtime/vsev.html">
+            
+                    
+                    AMD SEV机密虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../runtime/occlum.html">
+            
+                <a href="../runtime/occlum.html">
+            
+                    
+                    Occlum: 基于Intel SGX的轻量级LibOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../runtime/inclavare_containers.html">
+            
+                <a href="../runtime/inclavare_containers.html">
+            
+                    
+                    Inclavare Containers: 面向机密计算场景的开源容器运行时技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../runtime/enclave_cc.html">
+            
+                <a href="../runtime/enclave_cc.html">
+            
+                    
+                    Enclave-CC: 进程级机密容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../solution/cczoo.html">
+            
+                <a href="../solution/cczoo.html">
+            
+                    
+                    Intel Confidential Computing Zoo: Intel机密计算开源解决方案
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../solution/online_reasoning_service.html">
+            
+                <a href="../solution/online_reasoning_service.html">
+            
+                    
+                    部署TensorFlow Serving在线推理服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../solution/horizontal_federated_learning.html">
+            
+                <a href="../solution/horizontal_federated_learning.html">
+            
+                    
+                    部署TensorFlow横向联邦学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../solution/privacy_set_intersection.html">
+            
+                <a href="../solution/privacy_set_intersection.html">
+            
+                    
+                    部署隐私集合求交方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../solution/ppml.html">
+            
+                <a href="../solution/ppml.html">
+            
+                    
+                    PPML: 端到端隐私保护机器学习解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="apache-teaclave-java-tee-sdk-&#x9762;&#x5411;java&#x751F;&#x6001;&#x7684;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x7F16;&#x7A0B;&#x6846;&#x67B6;">Apache Teaclave Java TEE SDK: &#x9762;&#x5411;Java&#x751F;&#x6001;&#x7684;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x7F16;&#x7A0B;&#x6846;&#x67B6;</h1>
+<h2 id="&#x9879;&#x76EE;&#x4F4D;&#x7F6E;&#x94FE;&#x63A5;">&#x9879;&#x76EE;&#x4F4D;&#x7F6E;&#x94FE;&#x63A5;</h2>
+<p><a href="https://github.com/apache/incubator-teaclave-java-tee-sdk" target="_blank">https://github.com/apache/incubator-teaclave-java-tee-sdk</a></p>
+<h2 id="&#x5F52;&#x5C5E;&#x793E;&#x533A;sig">&#x5F52;&#x5C5E;&#x793E;&#x533A;SIG</h2>
+<p>&#x4E91;&#x539F;&#x751F;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;SIG</p>
+<h2 id="&#x6280;&#x672F;&#x81EA;&#x8EAB;&#x4ECB;&#x7ECD;">&#x6280;&#x672F;&#x81EA;&#x8EAB;&#x4ECB;&#x7ECD;</h2>
+<h3 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h3>
+<p>&#x6570;&#x636E;&#x5728;&#x5B58;&#x50A8;&#x548C;&#x4F20;&#x8F93;&#x72B6;&#x6001;&#x7684;&#x5B89;&#x5168;&#x6027;&#x901A;&#x8FC7;&#x52A0;&#x89E3;&#x5BC6;&#x5F97;&#x5230;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x89E3;&#x51B3;&#xFF0C;&#x4F46;&#x6570;&#x636E;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x662F;&#x4EE5;&#x660E;&#x6587;&#x7684;&#x65B9;&#x5F0F;&#x53C2;&#x4E0E;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x6CC4;&#x6F0F;&#xFF0C;&#x9020;&#x6210;&#x4E0D;&#x53EF;&#x4F30;&#x91CF;&#x7684;&#x98CE;&#x9669;&#x3002;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x6280;&#x672F;&#x6B63;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x800C;&#x751F;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x5904;&#x7406;&#x5668;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x82AF;&#x7247;&#x7684;&#x53EF;&#x4FE1;&#x6267;&#x884C;&#x73AF;&#x5883;(TEE)&#xFF0C;&#x5C06;&#x654F;&#x611F;&#x6570;&#x636E;&#x548C;&#x4EE3;&#x7801;&#x653E;&#x7F6E;&#x5728;&#x8BE5;TEE&#x5185;&#x6267;&#x884C;&#xFF0C;TEE&#x5BF9;&#x6574;&#x4E2A;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x8FDB;&#x884C;&#x4E25;&#x683C;&#x4FDD;&#x62A4;&#xFF0C;&#x6709;&#x6548;&#x963B;&#x6B62;TEE&#x4E4B;&#x5916;&#x7684;&#x7EC4;&#x4EF6;(&#x5305;&#x62EC;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;)&#x83B7;&#x53D6;&#x6216;&#x7BE1;&#x6539;TEE&#x5185;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#xFF0C;&#x4FDD;&#x8BC1;&#x654F;&#x611F;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#x7684;&#x5B89;&#x5168;&#x6027;&#x3002;</p>
+<h3 id="&#x95EE;&#x9898;&#x4E0E;&#x6311;&#x6218;">&#x95EE;&#x9898;&#x4E0E;&#x6311;&#x6218;</h3>
+<p>Intel SGX&#x6280;&#x672F;&#x63D0;&#x4F9B;&#x4E86;&#x6781;&#x9AD8;&#x5B89;&#x5168;&#x7B49;&#x7EA7;&#x7684;&#x53EF;&#x4FE1;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x4F46;&#x4F7F;&#x7528;&#x8BE5;&#x6280;&#x672F;&#x9700;&#x8981;&#x5BF9;&#x5DF2;&#x6709;&#x7684;&#x5E94;&#x7528;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6539;&#x9020;&#xFF0C;SGX SDK&#x53EA;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;C&#x8BED;&#x8A00;&#x751F;&#x6001;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x6B64;&#x5916;&#x7528;&#x6237;&#x9700;&#x8981;&#x7528;.edl&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#xFF0C;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x7E41;&#x7410;&#xFF0C;&#x5BF9;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x7F16;&#x7A0B;&#x4E60;&#x60EF;&#x51B2;&#x51FB;&#x8F83;&#x5927;&#xFF0C;&#x9020;&#x6210;&#x5F00;&#x53D1;&#x95E8;&#x69DB;&#x5F88;&#x9AD8;&#xFF0C;&#x963B;&#x788D;&#x4E86;&#x8BE5;&#x6280;&#x672F;&#x7684;&#x53D1;&#x5C55;&#x4E0E;&#x5E94;&#x7528;&#x3002;</p>
+<h3 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<p>Teaclave Java TEE SDK&#x63D0;&#x4F9B;&#x57FA;&#x4E8E;Intel SGX&#x6280;&#x672F;&#x7684;Java&#x751F;&#x6001;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x3002;&#x91C7;&#x7528;Java&#x9759;&#x6001;&#x7F16;&#x8BD1;&#x6280;&#x672F;&#x5C06;Enclave Module&#x7F16;&#x8BD1;&#x6210;Native&#x4EE3;&#x7801;&#x5E76;&#x8FD0;&#x884C;&#x5728;SGX TEE&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;&#x5BF9;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7684;&#x652F;&#x6301;&#x5E76;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x4FDD;&#x6301;&#x8F83;&#x4F4E;&#x7684;&#x7CFB;&#x7EDF;TCB&#x3002;&#x5C4F;&#x853D;&#x5E95;&#x5C42;&#x4EA4;&#x4E92;&#x7EC6;&#x8282;&#xFF0C;&#x7528;&#x6237;&#x65E0;&#x987B;&#x5B9A;&#x4E49;edl&#x63A5;&#x53E3;&#x6587;&#x4EF6;&#x3002;&#x7ED9;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;Pure Java&#x7684;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x548C;&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x94FE;&#xFF0C;&#x6781;&#x5927;&#x964D;&#x4F4E;Intel SGX&#x7684;&#x5F00;&#x53D1;&#x95E8;&#x69DB;&#x3002;</p>
+<div align="center"><img src="../materials/imgs/java_enclave_technology.png"></div>
+
+<p>&#x5C06;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x4ECE;C/C++&#x5E94;&#x7528;&#x751F;&#x6001;&#x6269;&#x5C55;&#x5230;Java&#x751F;&#x6001;&#xFF0C;&#x5728;&#x4E0D;&#x727A;&#x7272;&#x673A;&#x5BC6;&#x5B89;&#x5168;&#x6027;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x6781;&#x5927;&#x63D0;&#x5347;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x548C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;</p>
+<h2 id="&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5E94;&#x7528;&#x573A;&#x666F;</h2>
+<h3 id="&#x573A;&#x666F;&#x63CF;&#x8FF0;">&#x573A;&#x666F;&#x63CF;&#x8FF0;</h3>
+<p>Teaclave Java TEE SDK&#x53EF;&#x5E94;&#x7528;&#x4E8E;&#x5BF9;&#x6570;&#x636E;&#x548C;&#x7B97;&#x6CD5;&#x654F;&#x611F;&#x7684;&#x9886;&#x57DF;&#x3002;&#x6BD4;&#x5982;&#x653F;&#x5E9C;&#x90E8;&#x95E8;&#x3001;&#x91D1;&#x878D;&#x3001;&#x533A;&#x5757;&#x94FE;&#x3001;&#x533B;&#x7597;&#x548C;&#x8054;&#x90A6;&#x8BA1;&#x7B97;&#x7B49;&#xFF1B;</p>
+<p>&#x5728;&#x963F;&#x91CC;&#x4E91;DataTrust&#x9690;&#x79C1;&#x589E;&#x5F3A;&#x8BA1;&#x7B97;&#x5E73;&#x53F0;&#xFF0C;Teaclave Java TEE SDK&#x5E94;&#x7528;&#x5728;SQL&#x5B89;&#x5168;&#x5BA1;&#x8BA1;&#x548C;&#x6587;&#x4EF6;&#x8F6C;&#x52A0;&#x5BC6;&#x7B49;&#x4E24;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x6A21;&#x5757;&#x4E2D;&#xFF1B;</p>
+<h3 id="&#x5E94;&#x7528;&#x6548;&#x679C;">&#x5E94;&#x7528;&#x6548;&#x679C;</h3>
+<p>&#x57FA;&#x4E8E;Teaclave Java TEE SDK&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x5F00;&#x53D1;Pure Java&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5E94;&#x7528;&#xFF0C;&#x5E76;&#x4FDD;&#x8BC1;&#x7CFB;&#x7EDF;&#x5B89;&#x5168;&#x6027;&#x548C;&#x6027;&#x80FD;&#xFF0C;&#x63D0;&#x5347;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x4E0E;&#x4F53;&#x9A8C;&#x3002;</p>
+<h2 id="&#x7ADE;&#x54C1;&#x5206;&#x6790;">&#x7ADE;&#x54C1;&#x5206;&#x6790;</h2>
+<p>Intel SGX SDK&#x4E0E;OpenEnclave&#x4EC5;&#x652F;&#x6301;C/C++&#x751F;&#x6001;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#xFF0C;&#x4E14;&#x5F00;&#x53D1;&#x95E8;&#x69DB;&#x9AD8;&#xFF1B;</p>
+<p>Occlum LibOS&#x6280;&#x672F;&#x964D;&#x4F4E;&#x4E86;&#x673A;&#x5BC6;&#x8BA1;&#x7B97;&#x5F00;&#x53D1;&#x4E0E;&#x90E8;&#x7F72;&#x96BE;&#x5EA6;&#xFF0C;&#x4F46;&#x7CFB;&#x7EDF;TCB&#x5F88;&#x5927;&#xFF0C;&#x727A;&#x7272;&#x4E86;&#x5E94;&#x7528;&#x90E8;&#x5206;&#x673A;&#x5BC6;&#x6027;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2023-03-09 15:20:42
+</span></footer>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="he_development_guide.html" class="navigation navigation-prev " aria-label="Previous page: Intel_HE_Toolkit开发指南">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="java_enclave_development_guide.html" class="navigation navigation-next " aria-label="Next page: Apache_Teaclave_Java_TEE_SDK最佳实践">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Apache Teaclave Java TEE SDK: 面向Java生态的机密计算编程框架","level":"1.4.3","depth":2,"next":{"title":"Apache_Teaclave_Java_TEE_SDK最佳实践","level":"1.4.3.1","depth":3,"path":"framework/java_enclave_development_guide.md","ref":"./framework/java_enclave_development_guide.md","articles":[]},"previous":{"title":"Intel_HE_Toolkit开发指南","level":"1.4.2.1","depth":3,"path":"framework/he_development_guide.md","ref":"./framework/he_development_guide.md","articles":[]},"dir":"ltr"},"config":{"plugins":["alerts","tbfed-pagefooter","sectionx","expandable-chapters","chapter-fold","emphasize","chapter-fold","hide-element","tags","text-highlight","hints","-sharing","sharing-plus","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{},"chapter-fold":{},"emphasize":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"text-highlight":{},"highlight":{},"alerts":{},"tags":{"placement":"top"},"sharing":{"qq":false,"all":["weibo"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"edit-link":{"label":"编辑","base":"https://github.com/houhuiting/cncc-sig-white-paper/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"CNCC-sig.cn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CNCC-sig","language":"zh-hans","gitbook":">= 3.2.2","description":"CNCC-sig"},"file":{"path":"framework/java_enclave.md","mtime":"2023-03-09T07:20:42.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-17T12:57:24.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
