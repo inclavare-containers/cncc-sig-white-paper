@@ -30,3 +30,8 @@ TDX技术综合了MKTME（多密钥全加密内存）与VMX虚拟化技术，再
 
 ![](../materials/imgs/tdx.png)
 
+## 用户情况
+
+目前Intel TDX已经在主流云平台上提供相关实例或部署计划：
+1. 阿里云8代ECS 提供的TDX机密计算实例已经上线邀测。
+2. Microsoft Azure TDX机密计算实例也计划今年晚些时候提供服务。
