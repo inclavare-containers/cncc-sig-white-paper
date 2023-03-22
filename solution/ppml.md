@@ -1,4 +1,4 @@
-# PPML
+# PPML: 端到端隐私保护机器学习解决方案
 
 ## 项目位置链接
 
@@ -22,11 +22,11 @@ https://github.com/intel-analytics/BigDL/tree/main/ppml
 
 BigDL是英特尔开源的统一的人工智能解决方案平台，数据科学家，数据工程师等开发者可以使用BigDL轻松创建端到端的分布式人工智能应用。BigDL应用英特尔SGX可信硬件执行环境（Trusted Execution Environment, TEE），并集成了其他软硬件安全措施，构建了一个分布式的隐私保护机器学习（Privacy Preserving Machine Learning, PPML）平台，能够保护端到端（包括数据输入，数据分析，机器学习，深度学习等各个阶段）的分布式人工智能应用。
 
-### 技术介绍图片
+### 技术介绍
 
-![image.png](materials/imgs/ppml_architecture.png)
+<div align=center><img src="../materials/imgs/ppml_architecture.png"></div>
 
-![image.png](materials/imgs/ppml_workflow.png)
+<div align=center><img src="../materials/imgs/ppml_workflow.png"></div>
 
 上图是BigDL PPML预制工作流：
 1.	用户通过BigDL PPML命令行向Kubernetes提交任务，此操作会创建一个驱动节点

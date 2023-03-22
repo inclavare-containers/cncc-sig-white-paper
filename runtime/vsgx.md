@@ -1,4 +1,4 @@
-# vSGX
+# Intel vSGX：Intel SGX虚拟化
 
 ## 项目位置链接
 
@@ -25,13 +25,10 @@ SGX的能力主要针对用于飞地的专用内存EPC (Enclave Page Cache) 进�
 2.	通过为虚拟机模拟构建EPC的区域使虚拟机感知SGX EPC
 3.	捕捉虚拟机中SGX飞地构建的特殊指令，提供SGX飞地中附加功能的支持
 
-### 结果
+
+![image.png](../materials/imgs/vsgx_overview.png)
 
 SGX虚拟化的支持已在Linux上游社区和龙蜥的5.10内核中支持。
-
-### 技术介绍图片
-
-![image.png](materials/imgs/vsgx_overview.png)
 
 ## 用户情况
 

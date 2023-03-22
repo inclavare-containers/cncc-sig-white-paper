@@ -1,4 +1,4 @@
-# Occlum
+# Occlum: 基于Intel SGX的轻量级LibOS
 
 ## 项目位置链接
 
@@ -21,13 +21,8 @@ https://github.com/occlum/occlum
 
 Occlum是基于SGX基础上实现的一套轻量级LibOS，大大简化了应用开发者的难度。使用 Occlum 后，机器学习工作负载等只需修改极少量（甚至无需修改）源代码即可在英特尔® SGX 上运行，以高度透明的方式保护了用户数据的机密性和完整性。
 
-### 结果
+![image.png](../materials/imgs/occlum.png)
 
-大大简化，加速了机器学习等大规模应用运行在TEE（SGX）环境。
-
-### 技术介绍图片
-
-![image.png](materials/imgs/occlum.png)
 
 ## 应用场景
 
@@ -38,6 +33,4 @@ Occlum为Intel的一个分布式的隐私保护机器学习（Privacy Preserving
 
 ### 应用效果
 
-总体上来说，Occlum强大高效的LibOS使得用户的应用可以很方便的运行在TEE环境里，并且性能上，兼容性上都高于竞品。
-竞品分析
-Gramine，另一个比较流行的基于SGX基础上的LibOS。相比较于Gramine，Occlum提供轻量级LibOS流程: 它们是轻量级的，因为所有LibOS流程共享同一个SGX enclave。 与重型、per-enclave的LibOS进程相比，Occlum的轻型LibOS进程在启动时最高快1000倍，在IPC上快3倍。
+总体上来说，Occlum强大高效的LibOS使得用户的应用可以很方便的运行在TEE环境里，大大推动了TEE机密计算生态的发展。无论是在机密数据库（MySQL，PosrgreSQL，MongoDB），还是大数据、机器学习领域（PyTorch，Tensorflow，Spark），Occlum都有实例证明了其性能和兼容性的优秀。

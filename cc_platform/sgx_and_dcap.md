@@ -1,4 +1,4 @@
-# SGX SDK & DCAP
+# Intel SGX: Intel安全防护扩展
 
 ## 项目位置链接
 
@@ -24,13 +24,9 @@ https://github.com/intel/SGXDataCenterAttestationPrimitives
 
 英特尔软件防护扩展（Intel Software Guard Extensions，SGX）是一组安全相关的指令，它被内置于一些现代Intel 中央处理器（CPU）中。它们允许用户态及内核态代码定义将特定内存区域，设置为私有区域，此区域也被称作飞地（Enclaves）。其内容受到保护，不能被本身以外的任何进程存取，包括以更高权限级别运行的进程。CPU对受SGX保护的内存进行加密处理。受保护区域的代码和数据的加解密操作在CPU内部动态完成。因此，处理器可以保护代码不被其他代码窥视或检查。
 
-### 结果
-
 SGX提供了硬件指令级安全保障，保障了运行时的可信执行环境, 使恶意代码无法访问与篡改其他程序运行时的保护内容。Intel从第六代CPU开始支持SGX，SGX已经成为学术界的热点，各大云厂商也开始在云上部署基于SGX的应用。
 
-### 技术介绍图片
-
-![image.png](materials/imgs/sgx_dcap_overview.png)
+![image.png](../materials/imgs/sgx_dcap_overview.png)
 
 ## 应用场景
 

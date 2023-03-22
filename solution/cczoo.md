@@ -1,4 +1,4 @@
-# Intel Confidential Computing Zoo
+# Intel Confidential Computing Zoo: Intel机密计算开源解决方案
 
 ## 项目位置链接
 
@@ -18,11 +18,11 @@ https://github.com/intel/confidential-computing-zoo
 
 为了帮助用户快速了解和使用Intel TEE技术，便捷快速地设计和开发出相关机密计算安全解决方案，Intel发起并开源了Confidential Computing Zoo(CCZoo)， CCZoo集合了不同的安全技术栈，提供了基于不同应用场景下的各种典型端到端的安全解决方案的参考案例，这些参考案例贴近实际的商业案例，让用户增加在机密计算方案设计和实现的体验，同时，引导用户结合相应的参考案例，快速设计和实现出自己特定的机密计算方案。此外，CCZoo还会选择在不同公有云，例如阿里云ECS，部署和验证已发布的端到端的机密计算方案，为用户提供相关的云上部署特有的配置参考信息，帮助用户方案快速上云。
 
-### 技术介绍图片
+### 技术介绍
 
 CCZoo当前提供了6个类别的机密计算场景和1个孵化期项目集，具体分类如下图所示。为了方便部署，大部分的方案采用了容器化的集成。在不同的机密计算场景下，CCZoo选择使用了不同的安全技术组件模块，主要包括：Runtime Security、LibOS、Remote Attestation、KMS、TLS。用户可以通过对不同参考案例的部署增加对不同安全组件的使用和选择。
 
-![image.png](materials/imgs/cczoo_case_classification.png)
+![image.png](../materials/imgs/cczoo_case_classification.png)
 
 - Runtime Security: 当前主要使用Intel SGX，基于应用程序级别的隔离，对用户的应用和数据进行保护。
 - LibOS: Gramine和Occlum。通过LibOS运行现有应用程序，只需进行细微修改或无需修改，即可在Intel SGX Enclave中运行。
@@ -32,7 +32,7 @@ CCZoo当前提供了6个类别的机密计算场景和1个孵化期项目集，�
 
 CCZoo将会跟Anolis Cloud Native Confidential Computing(CNCC) SIG展开合作，将CCZoo中不同机密计算场景下的方案，结合Anolis的技术框架进行实现和部署，如下图所示。
 
-![image.png](materials/imgs/cczoo_anolis_technical_framework.png)
+![image.png](../materials/imgs/cczoo_anolis_technical_framework.png)
 
 ## 应用场景
 

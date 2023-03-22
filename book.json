@@ -16,32 +16,20 @@
         "tags",
         "text-highlight",
         "hints",
-        "copyright",
         "-sharing",
         "sharing-plus",
         "edit-link"
     ],
     "pluginsConfig": {
         "edit-link": {
-            "base": "https://github.com/inclavare-containers/cncc-sig-white-paper/edit/master",
+            "base": "https://github.com/houhuiting/cncc-sig-white-paper/edit/master",
             "label": "编辑"
-        },
-        "tbfed-pagefooter": {
-            "copyright":"Copyright &copy CNCC-sig.cn 2023",
-            "modify_label": "该文件修订时间：",
-            "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
         "sectionx": {
             "tag": "b"
         },
         "hide-element": {
             "elements": [".gitbook-link"]
-        },
-        "copyright": {
-            "site": "https://https://github.com/inclavare-containers/cncc-sig-white-paper/",
-            "author": "CNCC-sig",
-            "website": "CNCC-sig",
-            "copyProtect": true
         },
         "sharing": {
             "douban": true,
@@ -67,7 +55,7 @@
         }     
     },
     "structure": {
-        "readme": "overview.md"
+        "readme": "introduction.md"
     },
     "generator": "site"
 }
