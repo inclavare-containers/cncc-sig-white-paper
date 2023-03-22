@@ -81,3 +81,7 @@ Gramine 是一个轻量级的 LibOS，旨在以最小的主机要求运行单个
 在架构上 Gramine 可以在任何平台上支持运行未修改的 Linux 二进制文件。目前，Gramine 可以在 Linux 和 Intel SGX enclave 环境中工作。
 - 主页：https://gramine.readthedocs.io/
 - 代码库：https://github.com/gramineproject/gramine
+
+### TDX机密容器&机密虚拟机
+
+Intel Trust Domain Extension (TDX) 基于虚拟化扩展机密计算的隔离能力，通过构建机密虚拟机，为业务负载提供了虚拟机级别的机密计算的运行环境。通过Linux社区对TDX机密虚拟机的生态支持, 基于Linux的业务应用可以方便的迁移到机密计算环境中。此外，Intel TDX Pod 级机密容器将TDX机密虚拟机技术同容器生态无缝集成，以云原生方式运行，保护敏感工作负载和数据的机密性和完整性。在机密虚拟机内部，默认集成了 image-rs 和 attestation-agent 等组件，实现了容器镜像的拉取、授权、验签、解密、远程证明以及秘密注入等安全特性。
