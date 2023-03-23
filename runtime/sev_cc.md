@@ -155,7 +155,7 @@ Redirecting to /bin/systemctl status firewalld.service
 
 #### 关闭selinux
 
-Security-Enhanced Linux（SELinux）是一个在内核中实施的强制存取控制（MAC）安全性机制。为避免出现权限控制导致的虚拟机启动、访问失败等问题，此处建议关闭selinux。执行如下操作：
+Security-Enhanced Linux（SELinux）是一个在内核中实施的强制访问控制（MAC）安全性机制。为避免出现权限控制导致的虚拟机启动、访问失败等问题，此处建议关闭selinux。执行如下操作：
 
 ```shell
 setenforce 0

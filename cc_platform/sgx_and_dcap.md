@@ -44,7 +44,7 @@ SGX提供了硬件指令级安全保障，保障了运行时的可信执行环�
 
 ### 后续计划
 
-在Anolis OS发布之前，Intel已经在CentOS和Alinux上支持了SGX SDK/PSW/DCAP软件包的构建和完整的测试。在今年第二季度之后，我们又将TDX DCAP和SGX DCAP合并到统一的代码仓库。软件主要功能上准备完毕，安装包适配到Anolis OS的过程可以分为四个主要步骤：
+在Anolis OS发布之前，Intel已经在CentOS和Alinux上支持了SGX SDK/PSW/DCAP软件包的构建和完整的测试。在2022年第二季度之后，我们又将TDX DCAP和SGX DCAP合并到统一的代码仓库。软件主要功能上准备完毕，安装包适配到Anolis OS的过程可以分为四个主要步骤：
 1. 完成相关安装包（RPM）的构建和测试
 2. 发布到Intel软件仓库
 3. 提供RPM Build Spec
