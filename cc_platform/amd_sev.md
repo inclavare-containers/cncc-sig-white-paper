@@ -47,6 +47,6 @@ Confidential Virtual Machine也可以称作Secure Virtual Machine (SVM)，是最
 ## 用户情况
 
 目前AMD SEV 已经在主流的云平台上都已经提供相关的实例和部署：
-1. 阿里云G8ae实例内测中。
+1. 阿里云G8ae实例商业化中。
 2. Google公有云已经提供2代AMD SEV的机密计算实例。
 3. Microsoft Azure公有云已经提供了AMD SEV的机密计算实例和机密计算容器方案。

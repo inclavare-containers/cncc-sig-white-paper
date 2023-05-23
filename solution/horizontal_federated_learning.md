@@ -41,7 +41,7 @@ Anolis OS SGX端需要向Intel证书缓存服务（Provisioning Certificate Cach
 
 &emsp;&ensp;**③** 客户端通过RA-TLS向参数服务器发送梯度。
 
-&emsp;&ensp;**④** Parameter server进行梯度聚合，计算并更新全局模型参数。
+&emsp;&ensp;**④** 参数服务器进行梯度聚合，计算并更新全局模型参数。
 
 &emsp;&ensp;**⑤** 参数服务器将模型参数发送给客户端。
 
@@ -139,7 +139,7 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 
 图像分类：
 
-启动Docker三个容器（ps0、worker0、worker1）。如果在本地运行，请在`<PCCS ip addr>`中填写本地PCCS服务器地址。如果在云端运行请在进入Docker容器后修改`/etc/sgx_default_qcnl.conf`文件中的PCCS服务器地址，填写云端的PCCS地址，忽略启动脚本中的`<PCCS ip addr>`参数。
+启动三个Docker容器（ps0、worker0、worker1）。如果在本地运行，请在`<PCCS ip addr>`中填写本地PCCS服务器地址。如果在云端运行请在进入Docker容器后修改`/etc/sgx_default_qcnl.conf`文件中的PCCS服务器地址，填写云端的PCCS地址，忽略启动脚本中的`<PCCS ip addr>`参数。
 
 ```shell
 ./start_container.sh <ps0/worker0/worker1> <PCCS ip addr> latest anolisos
@@ -193,8 +193,6 @@ cd /image_classification
     ]
 }
 ```
-
-worker节点仅需要与ps节点通信，因此只需要配置一组校验值。ps节点需要与所有worker节点通信，因此可能需要配置多组校验值。
 
 修改完成后，在每个容器中运行相应的作业脚本。
 
